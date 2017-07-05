@@ -1,0 +1,494 @@
+
+{% extends "index.html" %}
+{% load pagination_tags %}
+{% block context %}
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static "js/jquery-1.10.1.js" %}"></script>
+    <script type="text/javascript" src='{% static "js/jquery.form.js" %}'></script>
+
+    <form id="form1" name="form1" method="post" action="">
+        <div class="right">
+            <div class="center" onclick="show_menu()"></div>
+            <div class="rightbar">
+                <div class="top"> 管理平台 &gt; <span id="current_pro_name">{{ current_pro_name }}</span>
+                    <span>&gt新增测试用例</span></div>
+                <div class="search">
+                    <form id="casenameForm" action="">
+                        <span>用例名称：</span><input style="width: 400px;" id="casename" type="text" name="casename"
+                                                 required autofocus/>
+                        <input type="hidden" name="current_name" value='{{ current_pro_name }}'/>
+                        <span>例：后台-审核页面-基本信息-证件号码字段显示的是客户姓名</span>
+                    </form>
+
+                    <div>
+                        <span>案例性质：</span>
+                        <select name="nature" id="">
+                            <option value="正案例">正案例</option>
+                            <option value="反案例">反案例</option>
+                        </select>
+                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <span>选择浏览器：</span>
+                        <select name="browser" id="">
+                            <option value="Firefox">Firefox</option>
+                            <option value="Chrome">Chrome</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="btnlist re_position">
+                    <a class="a_btn addcase_btn">添加用例</a>
+                    <a class="a_btn" id="add_step">新增步骤</a>
+                    <a class="a_btn delete_case" style="margin: 0 15px;">删除步骤</a>
+                    <input type="hidden" name="btn_name" value="保存用例">
+                    <input class="a_btn save_case" type="submit" name="Submit" value="保存"/>
+                    <input class="a_btn" type="button" id="sort" value="排序"/>
+
+                </div>
+
+
+                <div class="tablelist">
+                    <table class="list01 list02" id="tb">
+                        <tr class="thead">
+                            <th width="45"></th>
+                            <th width="45">步骤</th>
+                            <th>步骤说明</th>
+                            <th>执行动作</th>
+                            <th>输入值</th>
+                            <th>元素</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div id="mask" class="mask"></div>
+
+    <div class="dialog test_cases" id="element_list" style="width: 1400px">
+        <div class="test_list mb_20">
+            <h1 style="font-size: 22px;margin-left: 500px">元素列表</h1>
+
+            <div>
+                <span>ID:</span>
+                <input type="text" id="sec_id" value="">
+                <span>名称</span>
+                <input type="text" id="sec_name" value="">
+                <span>页面路径</span>
+                <input type="text" id="sec_url" value="">
+                <span>元素值</span>
+                <input type="text" id="sec_val" value="">
+                <input type="button" class="a_btn" id="serach"  value="查询">
+                <input type="button" class="a_btn" id="sure" value="打开">
+                <input type="button" class="a_btn addele"  value="添加元素">
+                <input type="button" class="a_btn" id="cencel" value="取消">
+            </div>
+            <div style="max-height: 620px;overflow-y: scroll">
+                <table class="list01 list02" id="ele_list" style="margin-top: 10px">
+                    <tr class="thead">
+                        <th width="45"></th>
+                        <th style="width: 50px">元素ID</th>
+                        <th>名称</th>
+                        <th style="width: 120px">定位方法</th>
+                        <th>元素值</th>
+                        <th>页面路径</th>
+                        <th>备注</th>
+                        <th>修改</th>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="dialog test_cases" id="test_cases02" style="height: 200px;width: 1200px">
+        <div>
+            <h1 style="font-size: 22px;margin-left: 500px">修改元素</h1>
+        </div>
+        <div style="margin-top: 20px">
+            <table class="list01 list02" style="margin-top: 10px">
+                <tr class="thead">
+                    <th style="width: 50px">元素ID</th>
+                    <th>名称</th>
+                    <th style="width: 120px">定位方法</th>
+                    <th>元素值</th>
+                    <th>页面路径</th>
+                    <th>备注</th>
+                </tr>
+                <tr class="mdf_ele">
+                    <td>
+                        <input type="text" id="m_id" name="ele_id" readonly="readonly">
+                    </td>
+                    <td>
+                        <input name="name" id="m_name" type="text" value="" required autofocus>
+                    </td>
+
+                    <td>
+                        <select name="function" id="m_fun" required autofocus>
+                            <option></option>
+                            {% for i in fun %}
+                                <option value="{{ i.name }}">{{ i.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <input name="value" type="text" id="m_val" required autofocus>
+                    </td>
+                    <td><input name="page_url" type="text" id="m_url" required autofocus>
+                    </td>
+                    <td>
+                        <input name="desc" type="text" id="m_desc" required autofocus>
+                    </td>
+                </tr>
+            </table>
+            <div style="margin-top:30px;margin-left: 400px">
+                <input id="mdy_sure" type="button" class="a_btn" value="保存">
+                <input type="button" style="margin-left: 5px" class="a_btn cancel" value="取消">
+            </div>
+        </div>
+    </div>
+    <div class="dialog test_cases" id="test_cases01"  >
+        <div class="test_list mb_20">
+            <div>
+            <h3 style="margin-left: 300px">添加用例
+                <a style="float: right;color: #d43f3a" class="close_div" href="#">[关闭]</a>
+            </h3>
+            <a class="a_btn save" style="margin-left: 440px">保存</a>
+            <a class="a_btn close_div" href="#" >取消</a>
+            </div>
+            <div style="max-height: 600px;overflow-y: scroll">
+                    <table class="list01 ">
+                        <tr class="thead">
+                            <th width="45">计数</th>
+                            <th width="45"></th>
+                             <th>用例名称</th>
+                            <th width="60">用例性质</th>
+                        </tr>
+                        {% for case in case_list %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+
+                            <td ><input type="checkbox" class="checkbox_add" id="" value="{{ case.id }}" name="case_chk"></td>
+
+                            <td >{{ case.name }}</td>
+                            <td>{{ case.case_nature }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="dialog test_cases" id="element_msg" style="height: 340px">
+        <div>
+            <span style="margin-left: 310px;font-size: 20px">元素详情</span>
+        </div>
+        <div style="margin-left: 343px" >
+            <input type="hidden" id="checkbox_index" value="">
+            <input class="a_btn ele_list" style="margin-left: 100px" type="button" value="元素列表">
+            <input id="close" class="a_btn" type="button" value="关闭">
+        </div>
+
+
+
+        <div id="msg">
+            <table class="list01 list02">
+            <tr class="thead">
+            <th>属性</th>
+            <th>详情</th>
+            </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="dialog test_cases" id="add_element" style="height: 200px;width: 1200px">
+        <div>
+        <h1 style="font-size: 22px;margin-left: 500px">添加元素</h1>
+        </div>
+        <div style="margin-top: 20px">
+            <table class="list01 list02" style="margin-top: 10px">
+                <tr class="thead">
+                    <th>名称</th>
+                    <th>定位方法</th>
+                    <th>元素值</th>
+                    <th>页面路径</th>
+                    <th>备注</th>
+                </tr>
+                <form id="tj_form" method="post">
+                    <tr>
+                        <td>
+                            <input name="name" type="text" autocomplete="off" required autofocus >
+                        </td>
+
+                        <td>
+                            <select name="function" autocomplete="off" required autofocus >
+                                <option></option>
+                                {% for i in fun %}
+                                    <option value="{{ i.name }}">{{ i.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                        <td>
+                            <input name="value" type="text" autocomplete="off" required autofocus >
+                        </td>
+                        <td><input name="page_url" type="text" autocomplete="off" required autofocus >
+                        </td>
+                        <td>
+                            <input name="desc" type="text" autocomplete="off" required autofocus >
+                        </td>
+                    </tr>
+                    <input type="hidden" name="pro_name" value="{{ current_pro_name }}">
+                    <input type="hidden" name="btn_name" value="添加元素">
+                    <input id="add_sure" type="submit" class="a_btn" value="保存">
+                    <input id="cancel" type="button" style="margin-left: 5px" class="a_btn cancel" value="取消">
+                </form>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    {#增加步骤#}
+    <script>
+        $("#add_step").click(function () {
+            $.get("/process_ajax/", function (date) {
+                $("#tb:last").append(date)
+            })
+        })
+    </script>
+
+    {#取消按钮#}
+    <script>
+        $("#cencel").click(function () {
+            $("#element_list").hide();
+            $("#mask").hide();
+        })
+    </script>
+
+  {#保存按钮#}
+    <script>
+        $("#sure").click(function () {    //取checkbox的索引值，然后判断列表中是否指勾选一个，通过索引值给对应的元素赋值
+            var check_list = $(".checkbox");
+            var check_len = [];
+            for (i = 0; i < check_list.length; i++) {
+                if (check_list[i].checked == true) {
+                    check_len.push(i);
+                }
+            }
+            if (check_len.length != 1) {
+                alert("请选择一条且只能一条数据哦")
+            }
+            else {
+                var ck_index = $("#checkbox_index").val();
+                elelist_id = $(".checkbox")[check_len].value;
+                elelist_name = $(".checkbox").eq([check_len]).attr("name");
+
+                ele_id = $(".checkbox_step").eq(ck_index).parent().parent().find("[class=ele_id]");
+                ele_name =$(".checkbox_step").eq(ck_index).parent().parent().find("[class=ele_name]");
+
+
+                ele_id.val(elelist_id);
+                ele_name.text(elelist_name);
+                ele_name.css("color","lightseagreen")
+                $("#element_list").hide()
+                $("#mask").hide()
+
+            }
+        })
+    </script>
+{#元素列表-维护元素-保存按钮#}
+    <script>
+        $("#mdy_sure").click(function () {
+            var pro_name = $("#current_pro_name").text();
+            var ele_id = $("#m_id").val();
+            var name = $("#m_name").val();
+            var fun = $("#m_fun").val();
+            var value = $("#m_val").val();
+            var desc = $("#m_desc").val();
+            var page_url = $("#m_url").val();
+            var url = "/case_process/?pro_name="+pro_name
+            $.post(url, {
+                btn_name: "修改元素",
+                pro_name: pro_name,
+                ele_id: ele_id,
+                name: name,
+                fun: fun,
+                value: value,
+                desc: desc,
+                page_url: page_url
+            }, function (date) {
+                alert(date)
+            })
+            $("#test_cases02").hide();
+            $("#mask").hide();
+
+
+        })
+    </script>
+
+    {#根据当前页面与滚动条位置，设置提示对话框的Top与Left#}
+<script>
+    function showDialog() {
+        var objW = $(window); //当前窗口
+        var objC = $(".dialog"); //对话框
+        var brsW = objW.width();
+        var brsH = objW.height();
+        var sclL = objW.scrollLeft();
+        var sclT = objW.scrollTop();
+        var curW = objC.width();
+        var curH = objC.height();
+        //计算对话框居中时的左边距
+        var left = sclL + (brsW - curW) / 2;
+        //计算对话框居中时的上边距
+        var top = sclT + (brsH - curH) / 2;
+        //设置对话框在页面中的位置
+        objC.css({"left": left, "top": top});
+    }
+</script>
+
+
+{#元素列表查询功能#}
+    <script>
+        $("#serach").click(function(){
+            var sec_id = $("#sec_id").val();
+            var sec_name = $("#sec_name").val();
+            var sec_url =$("#sec_url").val();
+            var sec_val = $("#sec_val").val();
+            var current_pro_name = $("#current_pro_name").text();
+            if(sec_id=='' && sec_name =='' && sec_url=='' &&sec_val==''){
+                $.post("/ele_list_ajax/", {"current_pro_name":current_pro_name},function (date) {
+                    $("#ele_list").children().append(date)
+                })
+            }
+            else{
+                tr_list = $("#ele_list").children().children();
+                for(i=1;i<tr_list.length;i++){
+                    tr_list.eq(i).remove();
+                }
+                $.post("/ele_list_ajax/", {"current_pro_name": current_pro_name,sec_id: sec_id,sec_name: sec_name,sec_url: sec_url,sec_val:sec_val,tag:"查询"}
+            ,
+            function (date) {
+                $("#ele_list").children().append(date)
+            }
+
+            )
+        }
+        })
+
+    </script>
+
+{#添加用例的保存按钮#}
+    <script>
+            $(".save").click(function () {
+                var check_obj = $("#test_cases01 input[type=checkbox]:checked");
+                var val_list = []
+                if (check_obj.length > 1) {
+                    for (i = 0; i < check_obj.length; i++) {
+                        val_list.push(check_obj[i].value);
+                    }
+                }
+                else {
+                    val_list.push(check_obj.val())
+                }
+
+                $.post('/case_ajax/', {id: val_list}, function (data) {
+                    $("#tb").children().append(data);
+                    $("#test_cases01").hide()
+                    $("#mask").hide()
+                    updateTags();
+                });
+            })
+
+        </script>
+
+{#删除步骤#}
+    <script>
+        $(".delete_case").click(function(){
+            var check_list = $(".checkbox_step");
+            for(i=0;i<check_list.length;i++){
+                if(check_list[i].checked==true){
+                    check_list.eq(i).parent().parent().remove()
+                }
+            }
+        })
+    </script>
+
+    {#保存用例按钮#}
+    <script>
+       $("#form1").submit(function (event) {
+                event.preventDefault();
+                var current_pro_name = $("#current_pro_name").text();
+                $.post("/case_process/?pro_name=" + current_pro_name, $(this).serialize(), function (result) {
+                    if (result == "保存成功") {
+                        alert(result);
+                        location.reload();
+                    }
+                    else{
+                        alert(result)
+                    }
+                })
+            });
+    </script>
+
+    {#元素详情-关闭按钮#}
+    <script>
+        $("#close").click(function(){
+            $("#mask").hide();
+            $("#element_msg").hide();
+            $("#msg").children().children().find("[class=thead]").siblings().remove()
+        })
+    </script>
+
+
+    {#    元素详情中的元素列表按钮#}
+<script>
+    $(".ele_list").click(function(){
+        tr_list = $("#ele_list").children().children() // 遍历清空元素列表
+        for (i = 1; i < tr_list.length; i++) {
+            tr_list.eq(i).remove();
+        }
+        var current_pro_name =$("#current_pro_name").text();  //ajax POST当前项目名，取改项目下所有的元素列表显示
+        $.post("/ele_list_ajax/", {"current_pro_name":current_pro_name},function (date) {
+            $("#ele_list").children().append(date)
+        })
+        $("#element_msg").hide()
+        showDialog()
+        $("#element_list").show();
+    })
+
+    $("#sort").click(function(){
+        var checkbox_list = $(".checkbox_step");
+        for(i=0;i<checkbox_list.length;i++){
+            checkbox_list.eq(i).parent().next().text(i+1)
+        }
+    })
+
+
+    {#添加元素按钮#}
+
+        $(".addele").click(function(){
+            $("#element_list").hide();
+            $("#add_element").show();
+        })
+
+{#添加元素保存#}
+    $("#tj_form").submit(function(event){
+        event.preventDefault();
+        var current_pro_name = $("#current_pro_name").text();
+        $.post('/case_process/?pro_name='+current_pro_name,$(this).serialize(),function(date){
+            alert(date);
+        })
+        $("#add_element").hide();
+        $("#mask").hide();
+    })
+
+</script>
+
+{% endblock %}
+

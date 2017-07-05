@@ -1,0 +1,114 @@
+
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'js/jquery-1.10.1.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.form.js' %}"></script>
+
+<form id="registerForm" method="post" >
+    姓名：<input type="text" name="xm" value="">
+    住址:<input type="text" name="url" value="">
+    <input type="button" id="tj" value="提交">
+</form>
+
+
+
+<div class="dialog test_cases" id="add_element" style="height: 200px;width: 1200px">
+        <div>
+        <h1 style="font-size: 22px;margin-left: 500px">添加元素</h1>
+        </div>
+        <div style="margin-top: 20px">
+            <table class="list01 list02" style="margin-top: 10px">
+                <tr class="thead">
+                    <th>名称</th>
+                    <th>定位方法</th>
+                    <th>元素值</th>
+                    <th>页面路径</th>
+                    <th>备注</th>
+                </tr>
+                <form id="tj_form" method="post" action="/add_element/">
+                    <tr>
+                        <td>
+                            <input name="name" type="text" autocomplete="off" required autofocus >
+                        </td>
+
+                        <td>
+                            <select name="function" autocomplete="off" required autofocus >
+
+                                    <option value="name ">name </option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <input name="value" type="text" autocomplete="off" required autofocus >
+                        </td>
+                        <td><input name="page_url" type="text" autocomplete="off" required autofocus >
+                        </td>
+                        <td>
+                            <input name="desc" type="text" autocomplete="off" required autofocus >
+                        </td>
+                    </tr>
+                    <input type="hidden" name="pro_name" value="易联天下（前台）">
+                    <input type="hidden" name="btn_name" value="添加元素">
+                    <input id="add_sure" type="button" class="a_btn" value="保存">
+
+                </form>
+
+            </table>
+            <div style="margin-top: 10px;margin-left: 400px">
+{#                <input id="add_sure" type="submit" class="a_btn" value="保存">#}
+                <input id="cancel" type="button" style="margin-left: 5px" class="a_btn cancel" value="取消">
+            </div>
+        </div>
+    </div>
+
+
+
+{#<a href="#myModal" id="one" data-id="111" data-toggle="modal"><i class="icon-remove"></i></a>#}
+{#<a href="http://localhost:3000/app_project/delete_case/" id="two" class="btn btn-primary">Delete</a>#}
+{##}
+<input type="button" id="gwg" value="给我改">
+
+<script>
+    $("#gwg").click(function(){
+        confirm("111")
+{#        alert("啦啦啦")#}
+{#        var one = $("#one").attr("data-id");#}
+{#        var tow_href = $("#two").attr("href");#}
+{#        $("#two").attr("href",tow_href+one)#}
+    })
+</script>
+
+
+
+
+
+
+
+
+
+
+<script>
+    $("#add_sure").click(function(){
+        $("#tj_form").ajaxSubmit(function(date){
+            alert(date)
+        })
+        return false
+    })
+</script>
+
+
+
+
+
+
+<script>
+     $("#tj").click(function(){
+         $("#registerForm").ajaxSubmit(function(date){
+             alert(date)
+         })
+         return false
+     })
+</script>
+
+
+
+

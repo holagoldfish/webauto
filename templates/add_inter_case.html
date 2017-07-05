@@ -1,0 +1,257 @@
+{% extends "index.html" %}
+
+
+{% block context %}
+    <form id="form1" name="form1" method="post" action="">
+        <div class="right">
+            <div class="center" onclick="show_menu()"></div>
+            <div class="rightbar">
+                <div class="top"> 管理平台 &gt; <span id="current_pro_name">{{ current_pro_name }}</span> <span>&gt新增接口测试用例</span></div>
+{#                <div class="top"> 管理平台 &gt; <span id="current_pro_name">1</span> <span>&gt新增接口测试用例</span></div>#}
+                <div class="search">
+                    <form id="casenameForm" action="">
+                        <span>用例名称：</span><input id="casename" type="text" name="casename" required autofocus/>
+                        <input type="hidden"  name="current_name" value='{{ current_pro_name }}' /><br>
+{#                        <input type="hidden"  name="current_name" value='1' /><br>#}
+                        <span>接口类型：</span>
+                            <select name='casetype' id=''>
+                                <option>jms报文</option>
+                                <option>开放平台</option>
+                            </select>
+                    </form>
+
+                </div>
+                <input class="a_btn" type="submit" name="Submit" value="保存"/>
+
+                <div>报文设计：</div>
+                <div class="btnlist re_position">
+                    <a class="a_btn addcase_btn">复制报文</a>
+                    <a class="a_btn add_messageobj">新增报文元素</a>
+                    <a class="a_btn delete_case" style="margin: 0 15px;" onclick="deletes();">删除报文元素</a>
+
+                </div>
+                <div class="tablelist">
+                    <table class="list01 list02">
+                        <tr class="thead">
+                            <th width="45"></th>
+                            <th width="220">字段位置</th>
+                            <th width="220">字段名称</th>
+                            <th>字段值</th>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+                <div>选择比对方式：
+                    <select name="diffSelect" id="diffSelect" onchange="showlist()">
+                        <option value="dbdiff">数据库对比</option>
+                        <option value="objdiff">特定字符串对比</option>
+                    </select>
+                </div>
+
+                <div class="btnlist re_position difflist">
+                    <span>数据库配置信息</span><br>
+                    <span>用户名：</span><input type='text' name='uname' value='' style=""/><br>
+                    <span>密码：</span><input type='text' name='pword' value=''/><br>
+                    <span>数据库地址：</span><input type='text' name='dbaddress' value=''/><br>
+                    <span>数据库查询语句：</span><input type='text' name='sql' value=''/><br>
+                    <span>比对对象：</span>
+                    <table class="list01 list03">
+                        <tr class="thead">
+                            <th width="45"></th>
+                            <th width="220">报文返回检查字段</th>
+                            <th width="220">报文返回检查字段1</th>
+                            <th width="220">数据库查询字段</th>
+                        </tr>
+                    </table>
+                    <a class="a_btn add_diff_obj_btn">增加比对对象</a>
+                    <a class="a_btn delete_diff_obj_btn" style="margin: 0 15px;">删除比对对象</a>
+                    <div>
+                    <table class="list01 list04">
+                        <span>特定字符对比</span><br>
+                        <tr class="thead">
+                            <th width="45"></th>
+                            <th width="220">报文返回检查字段名称</th>
+                            <th width="220">报文返回检查列表序号</th>
+                            <th width="220">报文返回检查列表字段名称</th>
+                            <th width="220">期望值</th>
+                        </tr>
+                    </table>
+                    <a class="a_btn add_diff_obj_btn1">增加比对对象</a>
+                    <a class="a_btn delete_diff_obj_btn" style="margin: 0 15px;">删除比对对象</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <div id="mask"  class="mask"></div>
+
+	<div class="dialog test_cases" id="test_cases01">
+
+		<div class="test_list mb_20">
+
+			<h3>易联平台</h3>
+
+            {% for case in case_list %}
+			<div>
+				<input type="checkbox" class="checkbox" id="" value="{{ case.name }}" name="{{ case.id }}">{{ case.name }}
+
+			</div>
+			{% endfor %}
+
+		</div>
+
+        <div class="textcenter"><a class="a_btn save" href="javascript:aaasss()">保存</a><a class="a_btn cancel ml_50" href="#">取消</a></div>
+
+{% load staticfiles %}
+<script type="text/javascript" src="{% static "js/jquery-1.10.1.js" %}"></script>
+
+{#    根据respone的内容弹出相应提示#}
+<script>
+$("#form1").submit(function (event) {
+    event.preventDefault();
+    var current_pro_name = $("#current_pro_name").text();
+    $.post("/add_inter_case/?pro_name=%C2%A0%C2%A0"+current_pro_name, $(this).serialize(), function (result) {
+        alert(result);
+        if (result == "保存成功") {
+            location.href = window.location.href;
+        }
+
+    })
+});
+
+</script>
+{#    进入页面就加载ajax中的方法#}
+<script>
+{#    $(document).ready(function(){#}
+{#        $(".add_messageobj").click(function()){#}
+{##}
+{#            $.post("/iMessCoKey1_ajax/",$(this).serialize(),function(result){#}
+{#                $(".key1Type").append(result)#}
+{#            });#}
+{#            $.post("/iMessCoKey2_ajax/",$(this).serialize(),function(result){#}
+{#                $(".key2Type").append(result)#}
+{#            });#}
+{##}
+{#        #}
+{#        }#}
+{#     });#}
+    /* 新增接口测试用例页面 新增报文元素 */
+    (function ($) {
+        $(".add_messageobj").click(function (){
+            $(".list02 tr:last").after("<tr>" +
+            "<td><input type='checkbox' class='checkbox' id='' name='checkbox'></td>" +
+            "<td><select name='key1' id='mkey1' class='key1Type'>" +
+                "<option value=''>" +
+                "<option>datagramHeader</option>" +
+                "<option>datagramBody</option>" +
+                "<option>messageCode</option>" +
+                "<option>targetSystemCode</option></td>" +
+                "<option>openJL</option></td>" +
+            "<td><select name='key2' id='mkey2' class='key2Type'>"+
+                "</select>"+
+            "</td>" +
+            "<td><input type='text' name='value' value=''/></td>" +
+            "</tr>");
+            $.post("/iMessCoKey2_ajax/",$(this).serialize(),function(result){
+                $(".key2Type").append(result)
+            });
+            /* clear the elements' value */
+            $(".key2Type").empty();
+        });
+    })(jQuery);
+    /* 新增接口测试用例页面 新增数据库比对元素 */
+    (function ($) {
+        $(".add_diff_obj_btn").click(function () {
+            $(".list03 tr:last").after("<tr>" +
+            "<td><input type='checkbox' class='checkbox' id='' name='checkbox'></td>" +
+            "<td><select name='dbkey1' id='' class='key2Type'>"+
+            "</select>"+
+            "</td>" +
+            "<td><select name='dbkey2' id='' class='key3Type'>"+
+            "</select>"+
+            "</td>" +
+            "<td><input type='text' name='dbkey3' value=''/></td>" +
+            "</tr>");
+            $.post("/iMessCoKey2_ajax/",$(this).serialize(),function(result){
+                $(".key2Type").append(result)
+            });
+            $.post("/iMessCoKey3_ajax/",$(this).serialize(),function(result){
+                $(".key3Type").append(result)
+            });
+            /* clear the elements' value */
+            $(".key2Type").empty();
+            $(".key3Type").empty();
+        });
+    })(jQuery);
+    /* 新增接口测试用例页面 新增比对元素 */
+    (function ($) {
+        $(".add_diff_obj_btn1").click(function () {
+            $(".list04 tr:last").after("<tr>" +
+            "<td><input type='checkbox' class='checkbox' id='' name='checkbox'></td>" +
+            "<td><select name='objkey1' id='' class='key2Type'>" +
+            "</select>"+
+            "<td>"+
+                "<input type='text' name='objkey2' value=''/>"+
+            "</td>" +
+            "<td><select name='objkey3' id='' class='key3Type'>"+
+            "</select>"+
+            "</td>" +
+            "<td><input type='text' name='execeptValue' value=''/></td>" +
+            "</tr>");
+            $.post("/iMessCoKey2_ajax/",$(this).serialize(),function(result){
+                $(".key2Type").append(result)
+            });
+            $.post("/iMessCoKey3_ajax/",$(this).serialize(),function(result){
+                $(".key3Type").append(result)
+            });
+            /* clear the elements' value */
+            $(".key2Type").empty();
+            $(".key3Type").empty();
+        });
+    })(jQuery);
+    /* 选中删除 */
+    (function ($) {
+        $(".delete_diff_obj_btn").click(function () {
+            var checkbox = $(".checkbox");
+            var btn_name = $(this).text();
+            var id_str = []
+            for (var i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked == true) {
+                    //id_str+=checkbox[i].value+",";
+                    id_str.push(checkbox[i].value)
+                    //id_str.append(checkbox[i].value)
+                    checkbox.eq(i).parents("tr").remove();
+
+                }
+
+            }
+
+            $.post("",{'get_id':id_str,btn_name:btn_name}, function (aa,bb) {
+                        return (aa,bb);
+                    })
+        });
+
+    })(jQuery);
+    /* 部分隐藏 */
+    function showlist()
+    {
+        var o = document.getElementById('diffSelect');
+        var strValue = o.options.value;
+        if(strValue == "dbdiff")
+        {
+            document.getElementById('dbdiff').style.display = "block";
+            document.getElementById('obj_diff').style.display = "none";
+        }
+        else if(strValue == "objdiff")
+        {
+            document.getElementById('dbdiff').style.display = "none";
+            document.getElementById('obj_diff').style.display = "block";
+        }
+    }
+</script>
+
+
+
+{% endblock %}

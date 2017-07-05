@@ -1,0 +1,26 @@
+<tr>
+    <td>
+        <input type="checkbox" class="checkbox tb" name="checkbox" id="addcass">
+    </td>
+    <td>
+        <select id='proName' name='proName' class='opt'>
+            {% for i in mo %}
+            <option value="{{ i.name }}">{{ i.name }}</option>
+            {% endfor %}
+    </select>
+    <td><input type="text" id="address" name="address">
+    </td>
+    <td><input type="text" id="username" name="username">
+    </td>
+    <td><input type="text" id="password" name="password">
+    </td>
+    <td><select name='interFaceType' id="interFaceType" class='action'>
+        <option>开放平台</option>
+        <option>jms报文</option>
+    </select>
+    </td>
+    <td>
+            <input style="width: auto;" type="radio" id="radiobutton" name="radiobutton" value="1" checked>启用
+            <input style="width: auto;" type="radio" id="radiobutton" name="radiobutton" value="0">禁用
+    </td>
+</tr>

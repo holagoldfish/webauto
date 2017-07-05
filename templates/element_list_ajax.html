@@ -1,0 +1,63 @@
+{% for ele in ele_list %}
+    <tr>
+        <td>
+            <input type="checkbox" name="{{ ele.name }}" value="{{ ele.id }}" class="checkbox">
+        </td>
+        <td>
+            <input type="text" name="ele_id" value="{{ ele.id }}" readonly="readonly">
+        </td>
+
+        <td>
+            <input name="name" type="text" value="{{ ele.name }}" readonly="readonly">
+        </td>
+
+        <td>
+            <input name="fun" type="text" value="{{ ele.fun }}" readonly="readonly">
+        </td>
+
+        <td>
+            <input name="value" type="text" value="{{ ele.values }}" readonly="readonly">
+        </td>
+
+        <td>
+            <input name="page_url" type="text" value="{{ ele.page_url }}" readonly="readonly">
+        </td>
+
+        <td>
+            <input name="desc" type="text" value="{{ ele.desc }}" readonly="readonly">
+        </td>
+
+        <td>
+            <input type="button" class="a_btn mdy_btn" value="维护元素">
+        </td>
+    </tr>
+    <br>
+{% endfor %}
+
+
+
+{% load staticfiles %}
+<script type="text/javascript" src="{% static "js/jquery-1.10.1.js" %}"></script>
+
+
+{#    维护元素#}
+<script>
+    $(".mdy_btn").click(function () {
+        ele_id = $(this).eq(0).parent().siblings().eq(1).children().val();
+        ele_name = $(this).eq(0).parent().siblings().eq(2).children().val();
+        ele_fun = $(this).eq(0).parent().siblings().eq(3).children().val();
+        ele_value = $(this).eq(0).parent().siblings().eq(4).children().val();
+        ele_url = $(this).eq(0).parent().siblings().eq(5).children().val();
+        ele_desc = $(this).eq(0).parent().siblings().eq(6).children().val();
+
+        mdy_id = $(".mdf_ele").children().eq(0).children().val(ele_id)
+        mdy_name = $(".mdf_ele").children().eq(1).children().val(ele_name)
+        mdy_fun = $(".mdf_ele").children().eq(2).children().val(ele_fun)
+        mdy_value = $(".mdf_ele").children().eq(3).children().val(ele_value)
+        mdy_url = $(".mdf_ele").children().eq(4).children().val(ele_url)
+        mdy_desc = $(".mdf_ele").children().eq(5).children().val(ele_desc)
+
+        $("#element_list").hide()
+        $("#test_cases02").show()
+    })
+</script>

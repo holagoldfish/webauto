@@ -1,0 +1,113 @@
+{% extends "index.html" %}
+{% load pagination_tags %}
+{% block context %}
+	<div class="right">
+		<div class="center" onClick="show_menu()"></div>
+		<div class="rightbar">
+			<div class="top"> 管理平台 &gt; <span id="cur_name">{{ current_project }}</span><span>&gt;维护测试用例</span></div>
+            <div class="btnlist re_position">
+                    <form method="get">
+                        <a class="a_btn" id="save" href="#">保存</a>
+                        <a class="a_btn delete_case" style="margin: 0 15px;" href="#">删除用例</a>
+                        <input type="hidden" name="cur_pro_name" value="{{ current_project }}">
+                        <span>ID:</span>
+                        <input id="c_id" type="text" name="c_id" value="">
+                        <span>用例名称:</span>
+                        <input id="c_nm" type="text" name="c_nm" value="">
+                        <select id="select_val" name="select">
+                            <option></option>
+                            <option value="正案例">正案例</option>
+                            <option value="反案例">反案例</option>
+                        </select>
+                        <input type="submit" class="a_btn" value="查询">
+                    </form>
+
+
+
+            </div>
+			<div class="tablelist mt_15">
+				<table class="list01 list03">
+
+					<tr class="thead">
+                        <th width="45"></th>
+						<th width="60">ID</th>
+						<th>用例名称</th>
+						<th>案例性质</th>
+						<th>创建时间</th>
+						<th>维护</th>
+                        <th>调试</th>
+					</tr>
+                    {% autopaginate contacts 10 %}
+                    {% for i in contacts %}
+					<tr >
+                        <td>
+							<input type="checkbox" class="checkbox" id="" value="{{ i.id }}">
+						</td>
+						<td>{{ i.id }}</td>
+						<td>{{ i.name }}</td>
+                        <td>{{ i.case_nature }}</td>
+						<td>{{ i.date }}</td>
+                        <td>
+                            <input class="a_btn mdy_case"  name="{{ i.id }}" type="submit" value="维护用例">
+                        </td>
+                        <td>
+                        <input class="a_btn debug" type="button" name="{{ i.id }}" value="测试调试">
+                        </td>
+					</tr>
+					{% endfor  %}
+				</table>
+
+			</div>
+
+		</div>
+        {% paginate %}
+	</div>
+{% load staticfiles %}
+    <script type="text/javascript" src="{% static "js/jquery-1.10.1.js" %}"></script>
+<script>
+    $("#save").click(function(){
+        alert("此按钮功能未开发")
+    })
+</script>
+
+{#    维护用例代码#}
+  <script>
+        $(".mdy_case").click(function(){
+            var ca_id = $(this).attr("name")
+            location.href = "/modify_process/?name="+ca_id;
+        })
+    </script>
+
+
+{#测试调试代码#}
+    <script>
+        $(".debug").click(function(event){
+            alert("亲,请确认打开调试客户端")
+            event.preventDefault();
+            var case_id = $(this).attr("name")
+            var btn_name = $(this).val();
+            pro_name = $("#cur_name").text();
+            url = "/case_list/?pro_name=  "+pro_name;
+            $.post(url,{case_id:case_id,btn_name:btn_name},function(result){
+            })
+        })
+    </script>
+
+
+
+
+    <script>
+        $(".delete_case").click(function(){
+            pro_name = $("#cur_name").text();
+            url = "/case_list/?pro_name=  "+pro_name;
+            $.post(url,$(this).serialize(),function(result){
+                alert(result)
+            })
+        })
+    </script>
+
+{% endblock %}
+
+
+
+

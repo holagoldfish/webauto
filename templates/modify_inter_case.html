@@ -1,0 +1,505 @@
+{% extends "index.html" %}
+{% block context %}
+  <script>
+      window.onload=onload();
+  </script>
+
+    <form id="form1" name="form1" method="post" action="">
+	<div class="right">
+		<div class="center" onClick="show_menu()"></div>
+		<div class="rightbar">
+			<div class="top"> 管理平台 &gt; <span id="current_pro_name">{{ current_project_name }}</span><span>&gt;修改接口测试用例</span></div>
+			<div class="search">
+				<form id="modify" name="form1" method="post" action="">
+					<span>用例名称：</span><input  type="text" id='modify_case'  name='casename' value='{{ casename.caseName }}' required autofocus />
+				</form>
+				<div>
+					<span>案例性质：</span>
+                    <span>{{ casename.caseType }}</span>
+                    <input  type="hidden"  name='project_id' value='{{ project_id }}'  />
+                    <input  type="hidden"  name='case_id' value='{{ casename.id }}'  />
+				</div>
+
+			</div>
+            <input class="a_btn" type="submit" name="Submit" value="保存"/>
+
+            <div>报文设计：</div>
+			<div class="btnlist re_position">
+                    <a class="a_btn addcase_btn">复制报文</a>
+                    <a class="a_btn add_messageobj">新增报文元素</a>
+                    <a class="a_btn delete_case" style="margin: 0 15px;" onclick="deletes();">删除报文元素</a>
+
+                </div>
+                <div class="tablelist">
+                    <table class="list01 list02">
+                        <tr class="thead">
+                            <th width="45"></th>
+                            <th width="220">字段位置</th>
+                            <th width="220">字段名称</th>
+                            <th>字段值</th>
+                        </tr>
+                        {% for i in casestep %}
+                        <tr>
+                            <td><input type="checkbox" class="checkbox" id="checkbox" name="checkbox"></td>
+                            <td><select name='key1' id='' class="key1" value={{ i.key1 }}>
+                                <option>{{ i.key1 }}</option>
+                                <option>datagramHeader</option>
+                                <option>datagramBody</option>
+                                <option>messageCode</option>
+                                <option>targetSystemCode</option></td>
+                            </select></td>
+
+                            <td><select name='key2' id='' class="key2" value={{ i.key2 }}>
+                                <option >{{ i.key2 }}</option>
+                                <option value='messageSequence'>messageSequence</option>
+                                <option value='sendTime'>sendTime</option>
+                                <option value='senderSystemCode'>senderSystemCode</option>
+                                <option value='userName'>userName</option>
+                                <option value='password'>password</option>
+                                <option value='receiverSystem'>receiverSystem</option>
+                                <option value='messageCode'>messageCode</option>
+                                <option value='asynTag'>asynTag</option>
+                                <option value='IsReSend'>IsReSend</option>
+                                <option value='thirdPartyType'>thirdPartyType</option>
+                                <option value='memo'>memo</option>
+                                <option value='requestOprator'>requestOprator</option>
+                                <option value='MarketNo'>MarketNo</option>
+                                <option value='BusinessNo'>BusinessNo</option>
+                                <option value='Amount'>Amount</option>
+                                <option value='BankCode'>BankCode</option>
+                                <option value='AccountType'>AccountType</option>
+                                <option value='AccountName'>AccountName</option>
+                                <option value='AccountNumber'>AccountNumber</option>
+                                <option value='chName'>chName</option>
+                                <option value='Province'>Province</option>
+                                <option value='City'>City</option>
+                                <option value='IdentificationType'>IdentificationType</option>
+                                <option value='IdentificationNumber'>IdentificationNumber</option>
+                                <option value='Note'>Note</option>
+                                <option value='ContractUserID'>ContractUserID</option>
+                                <option value='PhoneNumber'>PhoneNumber</option>
+                                <option value='Email'>Email</option>
+                                <option >actualTradeTime</option>
+                                <option >method</option>
+                            </select>
+                            </select></td>
+
+                            <td><input type="text" name="value" value='{{ i.keyValue }}'></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <br>
+                <div>选择比对方式：
+                    <select name="diffSelect" id="diffSelect" value='{{ casename.diffType }}' onchange="showlist()">
+                        <option value="dbdiff">数据库对比</option>
+                        <option value="objdiff">特定字符串对比</option>
+                    </select>
+                </div>
+
+                <div class="btnlist re_position difflist">
+                    <span>数据库配置信息</span><br>
+                    <span>用户名：</span><input type='text' name='uname' value='{{ casedb0.uName }}' style=""/><br>
+                    <span>密码：</span><input type='text' name='pword' value='{{ casedb0.pWord }}'/><br>
+                    <span>数据库地址：</span><input type='text' name='dbaddress' value='{{ casedb0.dbAddress }}'/><br>
+                    <span>数据库查询语句：</span><input type='text' name='sql' value='{{ casedb0.sql }}'/><br>
+                    <span>比对对象：</span>
+                    <table class="list01 list03">
+                        <tr class="thead">
+                            <th width="45"></th>
+                            <th width="220">报文返回检查字段</th>
+                            <th width="220">报文返回检查字段1</th>
+                            <th width="220">数据库查询字段</th>
+                        </tr>
+                        {% for i in casedb %}
+                        <tr id="tr0">
+                            <td id="td00">
+                                <input type="checkbox" class="checkbox" id="checkbox" name="checkbox">
+                            </td>
+                            <td>
+{#                            <td><input type="text" name="dbkey1" value='{{ i.key1 }}'>#}
+                            <select name='dbkey1' id='' class="key2" value={{ i.key1 }}>
+                                <option>{{ i.key1 }}</option>
+                                <option value='messageSequence'>messageSequence</option>
+                                <option value='sendTime'>sendTime</option>
+                                <option value='senderSystemCode'>senderSystemCode</option>
+                                <option value='userName'>userName</option>
+                                <option value='password'>password</option>
+                                <option value='receiverSystem'>receiverSystem</option>
+                                <option value='messageCode'>messageCode</option>
+                                <option value='asynTag'>asynTag</option>
+                                <option value='IsReSend'>IsReSend</option>
+                                <option value='thirdPartyType'>thirdPartyType</option>
+                                <option value='memo'>memo</option>
+                                <option value='requestOprator'>requestOprator</option>
+                                <option value='MarketNo'>MarketNo</option>
+                                <option value='BusinessNo'>BusinessNo</option>
+                                <option value='Amount'>Amount</option>
+                                <option value='BankCode'>BankCode</option>
+                                <option value='AccountType'>AccountType</option>
+                                <option value='AccountName'>AccountName</option>
+                                <option value='AccountNumber'>AccountNumber</option>
+                                <option value='chName'>chName</option>
+                                <option value='Province'>Province</option>
+                                <option value='City'>City</option>
+                                <option value='IdentificationType'>IdentificationType</option>
+                                <option value='IdentificationNumber'>IdentificationNumber</option>
+                                <option value='Note'>Note</option>
+                                <option value='ContractUserID'>ContractUserID</option>
+                                <option value='PhoneNumber'>PhoneNumber</option>
+                                <option value='Email'>Email</option>
+                                <option >actualTradeTime</option>
+                            </select>
+
+                            </td>
+
+
+                            <td><select name='dbkey2' id='' class="key2" value={{ i.key2 }}>
+                                <option>{{ i.key2 }}</option>
+                                <option value='messageSequence'>messageSequence</option>
+                                <option value='sendTime'>sendTime</option>
+                                <option value='senderSystemCode'>senderSystemCode</option>
+                                <option value='userName'>userName</option>
+                                <option value='password'>password</option>
+                                <option value='receiverSystem'>receiverSystem</option>
+                                <option value='messageCode'>messageCode</option>
+                                <option value='asynTag'>asynTag</option>
+                                <option value='IsReSend'>IsReSend</option>
+                                <option value='thirdPartyType'>thirdPartyType</option>
+                                <option value='memo'>memo</option>
+                                <option value='requestOprator'>requestOprator</option>
+                                <option value='MarketNo'>MarketNo</option>
+                                <option value='BusinessNo'>BusinessNo</option>
+                                <option value='Amount'>Amount</option>
+                                <option value='BankCode'>BankCode</option>
+                                <option value='AccountType'>AccountType</option>
+                                <option value='AccountName'>AccountName</option>
+                                <option value='AccountNumber'>AccountNumber</option>
+                                <option value='chName'>chName</option>
+                                <option value='Province'>Province</option>
+                                <option value='City'>City</option>
+                                <option value='IdentificationType'>IdentificationType</option>
+                                <option value='IdentificationNumber'>IdentificationNumber</option>
+                                <option value='Note'>Note</option>
+                                <option value='ContractUserID'>ContractUserID</option>
+                                <option value='PhoneNumber'>PhoneNumber</option>
+                                <option value='Email'>Email</option>
+                                <option >actualTradeTime</option>
+                            </select></td>
+                            <td><input type="text" name="dbkey3" value='{{ i.key3 }}'></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    <a class="a_btn add_diff_obj_btn">增加比对对象</a>
+                    <a class="a_btn delete_diff_obj_btn" style="margin: 0 15px;">删除比对对象</a>
+                <div>
+                    <table class="list01 list04">
+                        <span>特定字符对比</span><br>
+                        <tr class="thead">
+                            <th width="45"></th>
+                            <th width="220">报文返回检查字段名称</th>
+                            <th width="220">报文返回检查列表序号</th>
+                            <th width="220">报文返回检查列表字段名称</th>
+                            <th width="220">期望值</th>
+                        </tr>
+                        {% for i in caseobj %}
+                        <tr id="tr0">
+                            <td id="td00">
+                                <input type="checkbox" class="checkbox" id="checkbox" name="checkbox">
+                            </td>
+                            <td><select name='objkey1' id='' class="key2 key2Type" value='{{ i.key1 }}'>
+                                <option>{{ i.key1 }}</option>
+                                <option value='messageSequence'>messageSequence</option>
+                                <option value='sendTime'>sendTime</option>
+                                <option value='senderSystemCode'>senderSystemCode</option>
+                                <option value='userName'>userName</option>
+                                <option value='password'>password</option>
+                                <option value='receiverSystem'>receiverSystem</option>
+                                <option value='messageCode'>messageCode</option>
+                                <option value='asynTag'>asynTag</option>
+                                <option value='IsReSend'>IsReSend</option>
+                                <option value='thirdPartyType'>thirdPartyType</option>
+                                <option value='memo'>memo</option>
+                                <option value='requestOprator'>requestOprator</option>
+                                <option value='MarketNo'>MarketNo</option>
+                                <option value='BusinessNo'>BusinessNo</option>
+                                <option value='Amount'>Amount</option>
+                                <option value='BankCode'>BankCode</option>
+                                <option value='AccountType'>AccountType</option>
+                                <option value='AccountName'>AccountName</option>
+                                <option value='AccountNumber'>AccountNumber</option>
+                                <option value='chName'>chName</option>
+                                <option value='Province'>Province</option>
+                                <option value='City'>City</option>
+                                <option value='IdentificationType'>IdentificationType</option>
+                                <option value='IdentificationNumber'>IdentificationNumber</option>
+                                <option value='Note'>Note</option>
+                                <option value='ContractUserID'>ContractUserID</option>
+                                <option value='PhoneNumber'>PhoneNumber</option>
+                                <option value='Email'>Email</option>
+                                <option >actualTradeTime</option>
+                                <option >method</option>
+                            </select></td>
+
+                            <td><input type="text" name="objkey2" value='{{ i.key2 }}'></td>
+                            <td><select name='objkey3' id='' class="key3 key3Type" value='{{ i.key3 }}'>
+                                <option>{{ i.key3 }}</option>
+                                <option value='messageSequence'>messageSequence</option>
+                                <option value='sendTime'>sendTime</option>
+                                <option value='senderSystemCode'>senderSystemCode</option>
+                                <option value='userName'>userName</option>
+                                <option value='password'>password</option>
+                                <option value='receiverSystem'>receiverSystem</option>
+                                <option value='messageCode'>messageCode</option>
+                                <option value='asynTag'>asynTag</option>
+                                <option value='IsReSend'>IsReSend</option>
+                                <option value='thirdPartyType'>thirdPartyType</option>
+                                <option value='memo'>memo</option>
+                                <option value='requestOprator'>requestOprator</option>
+                                <option value='MarketNo'>MarketNo</option>
+                                <option value='BusinessNo'>BusinessNo</option>
+                                <option value='Amount'>Amount</option>
+                                <option value='BankCode'>BankCode</option>
+                                <option value='AccountType'>AccountType</option>
+                                <option value='AccountName'>AccountName</option>
+                                <option value='AccountNumber'>AccountNumber</option>
+                                <option value='chName'>chName</option>
+                                <option value='Province'>Province</option>
+                                <option value='City'>City</option>
+                                <option value='IdentificationType'>IdentificationType</option>
+                                <option value='IdentificationNumber'>IdentificationNumber</option>
+                                <option value='Note'>Note</option>
+                                <option value='ContractUserID'>ContractUserID</option>
+                                <option value='PhoneNumber'>PhoneNumber</option>
+                                <option value='Email'>Email</option>
+                                <option >actualTradeTime</option>
+                            </select></td>
+                            <td><input type="text" name="execeptValue" value='{{ i.execeptValue }}'></td>
+
+                        </tr>
+                        {% endfor %}
+                    </table>
+                 </div>
+                    <a class="a_btn add_diff_obj_btn1">增加比对对象</a>
+                    <a class="a_btn delete_diff_obj_btn" style="margin: 0 15px;">删除比对对象</a>
+                </div>
+
+
+				<div class="pagination" style="">
+					<form id="" action="" method="">
+						<ul class="clearfix">
+							<li><a href="javascript:void(0)">上一页</a></li>
+							<li>|</li>
+							<li><a href="javascript:void(0)">下一页</a></li>
+							<li>
+								<select name="" class="">
+									<option value="1" selected="">第1页</option>
+									<option value="2">第2页</option>
+									<option value="3">第3页</option>
+									<option value="4">第4页</option>
+								</select>
+							</li>
+							<li>共4页</li>
+							<li>
+								<select name="" id="">
+									<option value="10" selected="">10</option>
+									<option value="20">20</option>
+									<option value="50">50</option>
+									<option value="100">100</option>
+								</select>
+							</li>
+						 </ul>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    </form>
+    <div id="mask"  class="mask"></div>
+
+	<div class="dialog test_cases" id="test_cases01">
+
+		<div class="test_list mb_20">
+
+			<h3>易联平台</h3>
+
+            {% for case in case_list %}
+			<div>
+				<input type="checkbox" class="checkbox" id="" value="{{ case.name }}" name="{{ case.id }}">{{ case.name }}
+
+			</div>
+			{% endfor %}
+
+		</div>
+
+        <div class="textcenter"><a class="a_btn save" href="javascript:aaasss()">保存</a><a class="a_btn cancel ml_50" href="#">取消</a></div>
+
+<script type="text/javascript">
+    function aaasss(){
+        var aabbs = $("#test_cases01 input[type=checkbox]:checked");
+        var idStr = "";
+        for(var i =0;i<aabbs.length;i++){
+            idStr += aabbs[i].name;
+            if(i < aabbs.length - 1){
+                idStr += ",";
+            }
+        }
+        $.post('/business_ajax/',{id:idStr},function(data){
+            $("#tb").append(data);
+            $("#test_cases01").hide()
+            $("#mask").hide()
+            updateTags();
+        });
+
+    }
+</script>
+
+
+
+
+
+{% load staticfiles %}
+<script type="text/javascript" src="{% static "js/jquery-1.10.1.js" %}"></script>
+
+{#    根据respone的内容弹出相应提示#}
+<script>
+    (function ($) {
+        $("#form1").submit(function(event){
+            event.preventDefault();
+            var pro_name = $("#current_pro_name").text();
+            var id = $(".a_btn").attr("name");
+            var url = "/modify_inter_case/?"+id+"=维护用例";
+            $.post(url,$(this).serialize(),function(result){
+                alert(result);
+                if (result == "修改成功") {
+                    location.href = "/modify_inter_case_list/?pro_name="+pro_name;
+                }
+            })
+        })
+    })(jQuery);
+    /* 新增接口测试用例页面 新增报文元素 */
+    (function ($) {
+        $(".add_messageobj").click(function (){
+            $(".list02 tr:last").after("<tr>" +
+            "<td><input type='checkbox' class='checkbox' id='' name='checkbox'></td>" +
+            "<td><select name='key1' id='mkey1' class='key1Type'>" +
+                "<option value=''>" +
+                "<option>datagramHeader</option>" +
+                "<option>datagramBody</option>" +
+                "<option>messageCode</option>" +
+                "<option>targetSystemCode</option></td>" +
+                "<option>openJL</option></td>" +
+            "<td><select name='key2' id='mkey2' class='key2Type' width='120'>"+
+                "</select>"+
+            "</td>" +
+            "<td><input type='text' name='value' value=''/></td>" +
+            "</tr>");
+            $.post("/iMessCoKey2_ajax/",$(this).serialize(),function(result){
+                $(".key2Type").append(result)
+            });
+            /* clear the elements' value */
+            $(".key2Type").empty();
+            $(".key3Type").empty();
+        });
+    })(jQuery);
+    /* 新增接口测试用例页面 新增数据库比对元素 */
+    (function ($) {
+        $(".add_diff_obj_btn").click(function () {
+            $(".list03 tr:last").after("<tr>" +
+            "<td><input type='checkbox' class='checkbox' id='' name='checkbox'></td>" +
+            "<td><select name='dbkey1' id='' class='key2Type'>"+
+            "</select>"+
+            "</td>" +
+            "<td><select name='dbkey2' id='' class='key3Type'>"+
+            "</select>"+
+            "</td>" +
+            "<td><input type='text' name='dbkey3' value=''/></td>" +
+            "</tr>");
+            $.post("/iMessCoKey2_ajax/",$(this).serialize(),function(result){
+                $(".key2Type").append(result)
+            });
+            $.post("/iMessCoKey3_ajax/",$(this).serialize(),function(result){
+                $(".key3Type").append(result)
+            });
+            /* clear the elements' value */
+            $(".key2Type").empty();
+            $(".key3Type").empty();
+        });
+    })(jQuery);
+    /* 新增接口测试用例页面 新增比对元素 */
+
+
+
+    (function ($) {
+        $(".add_diff_obj_btn1").click(function () {
+
+            $(".list04 tr:last").after("<tr>" +
+                "<td><input type='checkbox' class='checkbox' id='' name='checkbox'></td>" +
+                "<td><select name='objkey1' id='' class='key2Type'>" +
+                "</select>"+
+                "<td>"+
+                    "<input type='text' name='objkey2' value=''/>"+
+                "</td>" +
+                "<td><select name='objkey3' id='' class='key3Type'>"+
+                "</select>"+
+                "</td>" +
+                "<td><input type='text' name='execeptValue' value=''/></td>" +
+                "</tr>");
+                $.post("/iMessCoKey2_ajax/",$(this).serialize(),function(result){
+                     $(".key2Type").append(result);
+                });
+                $.post("/iMessCoKey3_ajax/",$(this).serialize(),function(result){
+                     $(".key3Type").append(result);
+                });
+                /* clear the elements' value */
+                $(".key2Type").empty();
+                $(".key3Type").empty();
+        });
+    })(jQuery);
+
+
+
+    /* 选中删除 */
+    (function ($) {
+        $(".delete_diff_obj_btn").click(function () {
+            var checkbox = $(".checkbox");
+            var btn_name = $(this).text();
+            var id_str = []
+            for (var i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked == true) {
+                    //id_str+=checkbox[i].value+",";
+                    id_str.push(checkbox[i].value)
+                    //id_str.append(checkbox[i].value)
+                    checkbox.eq(i).parents("tr").remove();
+
+                }
+
+            }
+
+            $.post("",{'get_id':id_str,btn_name:btn_name}, function (aa,bb) {
+                        return (aa,bb);
+                    })
+        });
+
+    })(jQuery);
+    /* 部分隐藏 */
+    function showlist()
+    {
+        var o = document.getElementById('diffSelect');
+        var strValue = o.options.value;
+        if(strValue == "dbdiff")
+        {
+            document.getElementById('dbdiff').style.display = "block";
+            document.getElementById('obj_diff').style.display = "none";
+        }
+        else if(strValue == "objdiff")
+        {
+            document.getElementById('dbdiff').style.display = "none";
+            document.getElementById('obj_diff').style.display = "block";
+        }
+    }
+</script>
+
+
+{% endblock %}

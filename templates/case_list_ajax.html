@@ -1,0 +1,9 @@
+{% for case in case_list %}
+    <tr class="tr_list" style="max-height: 600px">
+        <td>{{ forloop.counter }}</td>
+        <td ><input type="checkbox" class="checkbox_case" id="pp" value="{{ case.name }}" name="{{ case.id }}"></td>
+        <td >{{ case.name }}</td>
+        <td>{{ case.case_nature }}</td>
+    </tr>
+{% endfor %}
+

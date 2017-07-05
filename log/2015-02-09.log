@@ -1,0 +1,764 @@
+2015-02-09 23:29:27,535 admin:INFO 项目已启动：
+2015-02-09 23:35:24,769 admin:INFO --进入首页
+2015-02-09 23:35:28,078 admin:INFO 读取用例列表成功
+2015-02-09 23:36:53,664 admin:INFO --进入首页
+2015-02-09 23:36:56,986 admin:INFO 读取用例列表成功
+2015-02-09 23:45:55,877 admin:INFO --进入首页
+2015-02-09 23:49:02,811 admin:INFO 读取用例列表成功
+2015-02-09 23:49:11,940 admin:INFO POST方法，接受modify传过来的按钮名称转换成测试用例ID，通过ID查找到该测试用例的所有步骤，并加载到模版中循环显示在页面上
+2015-02-09 23:49:45,828 admin:INFO POST方法，接受modify传过来的按钮名称转换成测试用例ID，通过ID查找到该测试用例的所有步骤，并加载到模版中循环显示在页面上
+2015-02-09 23:50:21,891 admin:INFO 读取用例列表成功
+2015-02-09 23:51:15,732 admin:INFO POST方法，接受modify传过来的按钮名称转换成测试用例ID，通过ID查找到该测试用例的所有步骤，并加载到模版中循环显示在页面上
+2015-02-09 23:52:13,289 admin:INFO 读取用例列表成功
+2015-02-09 23:56:03,022 admin:INFO 读取用例列表成功
+2015-02-09 23:56:48,750 admin:INFO --进入首页
+2015-02-10 00:03:21,970 admin:INFO --进入首页
+2015-02-10 00:08:48,342 admin:INFO --进入首页
+2015-02-10 00:08:50,263 admin:INFO --进入首页
+2015-02-10 00:30:09,513 admin:INFO 读取用例列表成功
+2015-02-10 00:30:43,058 admin:INFO 读取用例列表成功
+2015-02-10 00:30:55,792 admin:INFO 读取用例列表成功
+2015-02-10 00:31:12,423 admin:INFO 读取用例列表成功
+2015-02-10 00:31:22,647 admin:INFO 读取用例列表成功
+2015-02-10 00:33:34,496 admin:INFO 读取用例列表成功
+2015-02-10 00:34:40,921 admin:INFO 读取用例列表成功
+2015-02-10 00:34:50,917 admin:INFO 读取用例列表成功
+2015-02-10 00:34:57,232 admin:INFO 读取用例列表成功
+2015-02-10 00:35:21,052 admin:INFO 连接的客户端ip是:172.16.6.6，当前用例ID是:52
+2015-02-10 00:36:08,026 admin:INFO 读取用例列表成功
+2015-02-10 00:37:26,388 admin:INFO --进入首页
+] [DEBUG]- (0.001) UPDATE `django_session` SET `session_data` = 'N2YxYmQxOWE5YmZlNWRkNTJmNjY1MjkwMjYyZjRkNmVmNzE0NjQ1NTp7Il9hdXRoX3VzZXJfaGFzaCI6IjExYTYzNjljMzAyNGQ1ZTBlNjFiMGM5MzMwNjNhMjRkZGVkZmViYWQiLCJfYXV0aF91c2VyX2lkIjoxLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCJ9', `expire_date` = '2015-02-23 15:35:24' WHERE `django_session`.`session_key` = 'n8lbz4pcysbr85543ap50vueu590wxwi'; args=(u'N2YxYmQxOWE5YmZlNWRkNTJmNjY1MjkwMjYyZjRkNmVmNzE0NjQ1NTp7Il9hdXRoX3VzZXJfaGFzaCI6IjExYTYzNjljMzAyNGQ1ZTBlNjFiMGM5MzMwNjNhMjRkZGVkZmViYWQiLCJfYXV0aF91c2VyX2lkIjoxLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCJ9', u'2015-02-23 15:35:24', 'n8lbz4pcysbr85543ap50vueu590wxwi')
+--进入首页
+读取用例列表成功
+2015-02-09 23:35:28,085 [Thread-13:7004] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:35:28,088 [Thread-13:7004] [django.db.backends:91] [DEBUG]- (0.002) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+2015-02-09 23:36:49,823 [Thread-22:4672] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-02-09 23:36:49,835 [Thread-23:5668] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-02-09 23:36:53,319 [Thread-24:6900] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:36:53,321 [Thread-24:6900] [django.db.backends:91] [DEBUG]- (0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'admin' LIMIT 21; args=(u'admin',)
+2015-02-09 23:36:53,552 [Thread-24:6900] [django.db.backends:91] [DEBUG]- (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '9bzq9dne6iqsr039988hq5bxlr4quer0' AND `django_session`.`expire_date` > '2015-02-09 15:36:53') LIMIT 21; args=('9bzq9dne6iqsr039988hq5bxlr4quer0', u'2015-02-09 15:36:53')
+2015-02-09 23:36:53,553 [Thread-24:6900] [django.db.backends:91] [DEBUG]- (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = '9bzq9dne6iqsr039988hq5bxlr4quer0' LIMIT 21; args=('9bzq9dne6iqsr039988hq5bxlr4quer0',)
+2015-02-09 23:36:53,555 [Thread-24:6900] [django.db.backends:91] [DEBUG]- (0.000) DELETE FROM `django_session` WHERE `django_session`.`session_key` IN ('9bzq9dne6iqsr039988hq5bxlr4quer0'); args=(u'9bzq9dne6iqsr039988hq5bxlr4quer0',)
+2015-02-09 23:36:53,591 [Thread-24:6900] [django.db.backends:91] [DEBUG]- (0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'h9ps1ooc49b1tgl1cflli1a8zsxoi5xz' LIMIT 1; args=(u'h9ps1ooc49b1tgl1cflli1a8zsxoi5xz',)
+2015-02-09 23:36:53,594 [Thread-24:6900] [django.db.backends:91] [DEBUG]- (0.000) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('h9ps1ooc49b1tgl1cflli1a8zsxoi5xz', 'NjNmMzhhY2FlMzBmNzkxZTZjZmYyZDhjOGYxZTJiMmFhNTA5ZTAxNjp7fQ==', '2015-02-23 15:36:53'); args=(u'h9ps1ooc49b1tgl1cflli1a8zsxoi5xz', u'NjNmMzhhY2FlMzBmNzkxZTZjZmYyZDhjOGYxZTJiMmFhNTA5ZTAxNjp7fQ==', u'2015-02-23 15:36:53')
+2015-02-09 23:36:53,625 [Thread-24:6900] [django.db.backends:91] [DEBUG]- (0.000) UPDATE `auth_user` SET `last_login` = '2015-02-09 15:36:53' WHERE `auth_user`.`id` = 1; args=(u'2015-02-09 15:36:53', 1)
+2015-02-09 23:36:53,638 [Thread-24:6900] [django.db.backends:91] [DEBUG]- (0.001) UPDATE `django_session` SET `session_data` = 'YWFjNzExMTY0MGQzNGYzZTA4YjM3Yjk1Mzg5NmNiYzRiMzBlYzhhODp7Il9hdXRoX3VzZXJfaGFzaCI6IjExYTYzNjljMzAyNGQ1ZTBlNjFiMGM5MzMwNjNhMjRkZGVkZmViYWQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9', `expire_date` = '2015-02-23 15:36:53' WHERE `django_session`.`session_key` = 'h9ps1ooc49b1tgl1cflli1a8zsxoi5xz'; args=(u'YWFjNzExMTY0MGQzNGYzZTA4YjM3Yjk1Mzg5NmNiYzRiMzBlYzhhODp7Il9hdXRoX3VzZXJfaGFzaCI6IjExYTYzNjljMzAyNGQ1ZTBlNjFiMGM5MzMwNjNhMjRkZGVkZmViYWQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9', u'2015-02-23 15:36:53', u'h9ps1ooc49b1tgl1cflli1a8zsxoi5xz')
+--进入首页
+读取用例列表成功
+2015-02-09 23:36:56,993 [Thread-33:6572] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:36:56,996 [Thread-33:6572] [django.db.backends:91] [DEBUG]- (0.002) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+2015-02-09 23:45:55,562 [Thread-37:2492] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:45:55,565 [Thread-37:2492] [django.db.backends:91] [DEBUG]- (0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'admin' LIMIT 21; args=(u'admin',)
+2015-02-09 23:45:55,694 [Thread-37:2492] [django.db.backends:91] [DEBUG]- (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'v8vf13imyypoycqobbfps8n0vfihliva' AND `django_session`.`expire_date` > '2015-02-09 15:45:55') LIMIT 21; args=('v8vf13imyypoycqobbfps8n0vfihliva', u'2015-02-09 15:45:55')
+2015-02-09 23:45:55,697 [Thread-37:2492] [django.db.backends:91] [DEBUG]- (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = 'v8vf13imyypoycqobbfps8n0vfihliva' LIMIT 21; args=('v8vf13imyypoycqobbfps8n0vfihliva',)
+2015-02-09 23:45:55,698 [Thread-37:2492] [django.db.backends:91] [DEBUG]- (0.001) DELETE FROM `django_session` WHERE `django_session`.`session_key` IN ('v8vf13imyypoycqobbfps8n0vfihliva'); args=(u'v8vf13imyypoycqobbfps8n0vfihliva',)
+2015-02-09 23:45:55,732 [Thread-37:2492] [django.db.backends:91] [DEBUG]- (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = '9yxng0yqmrz8x2u3flti5ah4ydq9y7v2' LIMIT 1; args=(u'9yxng0yqmrz8x2u3flti5ah4ydq9y7v2',)
+2015-02-09 23:45:55,733 [Thread-37:2492] [django.db.backends:91] [DEBUG]- (0.000) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('9yxng0yqmrz8x2u3flti5ah4ydq9y7v2', 'NjNmMzhhY2FlMzBmNzkxZTZjZmYyZDhjOGYxZTJiMmFhNTA5ZTAxNjp7fQ==', '2015-02-23 15:45:55'); args=(u'9yxng0yqmrz8x2u3flti5ah4ydq9y7v2', u'NjNmMzhhY2FlMzBmNzkxZTZjZmYyZDhjOGYxZTJiMmFhNTA5ZTAxNjp7fQ==', u'2015-02-23 15:45:55')
+2015-02-09 23:45:55,813 [Thread-37:2492] [django.db.backends:91] [DEBUG]- (0.031) UPDATE `auth_user` SET `last_login` = '2015-02-09 15:45:55' WHERE `auth_user`.`id` = 1; args=(u'2015-02-09 15:45:55', 1)
+2015-02-09 23:45:55,838 [Thread-37:2492] [django.db.backends:91] [DEBUG]- (0.001) UPDATE `django_session` SET `session_data` = 'YWFjNzExMTY0MGQzNGYzZTA4YjM3Yjk1Mzg5NmNiYzRiMzBlYzhhODp7Il9hdXRoX3VzZXJfaGFzaCI6IjExYTYzNjljMzAyNGQ1ZTBlNjFiMGM5MzMwNjNhMjRkZGVkZmViYWQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9', `expire_date` = '2015-02-23 15:45:55' WHERE `django_session`.`session_key` = '9yxng0yqmrz8x2u3flti5ah4ydq9y7v2'; args=(u'YWFjNzExMTY0MGQzNGYzZTA4YjM3Yjk1Mzg5NmNiYzRiMzBlYzhhODp7Il9hdXRoX3VzZXJfaGFzaCI6IjExYTYzNjljMzAyNGQ1ZTBlNjFiMGM5MzMwNjNhMjRkZGVkZmViYWQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9', u'2015-02-23 15:45:55', u'9yxng0yqmrz8x2u3flti5ah4ydq9y7v2')
+--进入首页
+读取用例列表成功
+2015-02-09 23:49:02,819 [Thread-39:3212] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:49:02,821 [Thread-39:3212] [django.db.backends:91] [DEBUG]- (0.002) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+2015-02-09 23:49:09,737 [Thread-50:988] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:49:09,739 [Thread-50:988] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-09 23:49:09,740 [Thread-50:988] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 10; args=()
+2015-02-09 23:49:11,937 [Thread-51:3284] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:49:11,937 [Thread-51:3284] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` WHERE `webapp_test_case`.`id` = 17 LIMIT 21; args=(17,)
+POST方法，接受modify传过来的按钮名称转换成测试用例ID，通过ID查找到该测试用例的所有步骤，并加载到模版中循环显示在页面上
+2015-02-09 23:49:11,944 [Thread-51:3284] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` WHERE `webapp_test_step`.`case_name_id` = 17; args=(17,)
+2015-02-09 23:49:45,825 [Thread-53:3760] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:49:45,828 [Thread-53:3760] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` WHERE `webapp_test_case`.`id` = 17 LIMIT 21; args=(17,)
+POST方法，接受modify传过来的按钮名称转换成测试用例ID，通过ID查找到该测试用例的所有步骤，并加载到模版中循环显示在页面上
+2015-02-09 23:49:45,834 [Thread-53:3760] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` WHERE `webapp_test_step`.`case_name_id` = 17; args=(17,)
+读取用例列表成功
+2015-02-09 23:50:21,898 [Thread-60:5296] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:50:21,901 [Thread-60:5296] [django.db.backends:91] [DEBUG]- (0.003) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+2015-02-09 23:51:15,729 [Thread-70:6548] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:51:15,730 [Thread-70:6548] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` WHERE `webapp_test_case`.`id` = 17 LIMIT 21; args=(17,)
+POST方法，接受modify传过来的按钮名称转换成测试用例ID，通过ID查找到该测试用例的所有步骤，并加载到模版中循环显示在页面上
+2015-02-09 23:51:15,739 [Thread-70:6548] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` WHERE `webapp_test_step`.`case_name_id` = 17; args=(17,)
+读取用例列表成功
+2015-02-09 23:52:13,296 [Thread-78:5424] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:52:13,312 [Thread-78:5424] [django.db.backends:91] [DEBUG]- (0.002) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+2015-02-09 23:52:41,614 [Thread-88:4304] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:52:41,615 [Thread-88:4304] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-09 23:52:41,615 [Thread-88:4304] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 10; args=()
+2015-02-09 23:52:43,986 [Thread-89:5884] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:52:43,987 [Thread-89:5884] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow`; args=()
+2015-02-09 23:52:48,852 [Thread-90:5188] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:52:48,854 [Thread-90:5188] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow` WHERE `webapp_business_flow`.`id` = 30 LIMIT 21; args=(30,)
+2015-02-09 23:52:48,861 [Thread-90:5188] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow_stp`.`id`, `webapp_business_flow_stp`.`desc`, `webapp_business_flow_stp`.`method`, `webapp_business_flow_stp`.`element`, `webapp_business_flow_stp`.`action`, `webapp_business_flow_stp`.`value`, `webapp_business_flow_stp`.`case_name_id` FROM `webapp_business_flow_stp` WHERE `webapp_business_flow_stp`.`case_name_id` = 30; args=(30,)
+2015-02-09 23:52:48,867 [Thread-90:5188] [django.db.backends:91] [DEBUG]- (0.002) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+2015-02-09 23:53:55,290 [Thread-92:6708] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:53:55,292 [Thread-92:6708] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow`; args=()
+2015-02-09 23:53:57,499 [Thread-100:5380] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:53:57,500 [Thread-100:5380] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow`; args=()
+2015-02-09 23:53:58,246 [Thread-108:6228] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:53:58,247 [Thread-108:6228] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow`; args=()
+2015-02-09 23:53:59,051 [Thread-116:4328] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:53:59,052 [Thread-116:4328] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow`; args=()
+2015-02-09 23:54:05,517 [Thread-125:4736] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:54:05,519 [Thread-125:4736] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-09 23:54:05,520 [Thread-125:4736] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 10; args=()
+2015-02-09 23:55:56,260 [Thread-127:6304] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:55:56,262 [Thread-127:6304] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-09 23:55:56,263 [Thread-127:6304] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 10 OFFSET 10; args=()
+2015-02-09 23:55:56,887 [Thread-128:3384] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:55:56,888 [Thread-128:3384] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-09 23:55:56,890 [Thread-128:3384] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 10 OFFSET 20; args=()
+2015-02-09 23:55:57,303 [Thread-129:652] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:55:57,312 [Thread-129:652] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-09 23:55:57,313 [Thread-129:652] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 5 OFFSET 30; args=()
+2015-02-09 23:56:00,219 [Thread-130:5600] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:56:00,220 [Thread-130:5600] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-09 23:56:00,221 [Thread-130:5600] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 10 OFFSET 20; args=()
+读取用例列表成功
+2015-02-09 23:56:03,030 [Thread-131:2568] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:56:03,033 [Thread-131:2568] [django.db.backends:91] [DEBUG]- (0.002) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+2015-02-09 23:56:22,974 [Thread-132:3448] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:56:22,976 [Thread-132:3448] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow`; args=()
+2015-02-09 23:56:48,540 [Thread-135:6380] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-09 23:56:48,542 [Thread-135:6380] [django.db.backends:91] [DEBUG]- (0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'admin' LIMIT 21; args=(u'admin',)
+2015-02-09 23:56:48,673 [Thread-135:6380] [django.db.backends:91] [DEBUG]- (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = '9yxng0yqmrz8x2u3flti5ah4ydq9y7v2' AND `django_session`.`expire_date` > '2015-02-09 15:56:48') LIMIT 21; args=('9yxng0yqmrz8x2u3flti5ah4ydq9y7v2', u'2015-02-09 15:56:48')
+2015-02-09 23:56:48,674 [Thread-135:6380] [django.db.backends:91] [DEBUG]- (0.000) UPDATE `auth_user` SET `last_login` = '2015-02-09 15:56:48' WHERE `auth_user`.`id` = 1; args=(u'2015-02-09 15:56:48', 1)
+2015-02-09 23:56:48,706 [Thread-135:6380] [django.db.backends:91] [DEBUG]- (0.000) UPDATE `django_session` SET `session_data` = 'N2YxYmQxOWE5YmZlNWRkNTJmNjY1MjkwMjYyZjRkNmVmNzE0NjQ1NTp7Il9hdXRoX3VzZXJfaGFzaCI6IjExYTYzNjljMzAyNGQ1ZTBlNjFiMGM5MzMwNjNhMjRkZGVkZmViYWQiLCJfYXV0aF91c2VyX2lkIjoxLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCJ9', `expire_date` = '2015-02-23 15:56:48' WHERE `django_session`.`session_key` = '9yxng0yqmrz8x2u3flti5ah4ydq9y7v2'; args=(u'N2YxYmQxOWE5YmZlNWRkNTJmNjY1MjkwMjYyZjRkNmVmNzE0NjQ1NTp7Il9hdXRoX3VzZXJfaGFzaCI6IjExYTYzNjljMzAyNGQ1ZTBlNjFiMGM5MzMwNjNhMjRkZGVkZmViYWQiLCJfYXV0aF91c2VyX2lkIjoxLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCJ9', u'2015-02-23 15:56:48', '9yxng0yqmrz8x2u3flti5ah4ydq9y7v2')
+--进入首页
+2015-02-10 00:03:21,716 [Thread-145:5772] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:03:21,717 [Thread-145:5772] [django.db.backends:91] [DEBUG]- (0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'admin' LIMIT 21; args=(u'admin',)
+2015-02-10 00:03:21,848 [Thread-145:5772] [django.db.backends:91] [DEBUG]- (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'frm4qsv8sut8hpzgbvsqe99ly02yavux' AND `django_session`.`expire_date` > '2015-02-09 16:03:21') LIMIT 21; args=('frm4qsv8sut8hpzgbvsqe99ly02yavux', u'2015-02-09 16:03:21')
+2015-02-10 00:03:21,849 [Thread-145:5772] [django.db.backends:91] [DEBUG]- (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE `django_session`.`session_key` = 'frm4qsv8sut8hpzgbvsqe99ly02yavux' LIMIT 21; args=('frm4qsv8sut8hpzgbvsqe99ly02yavux',)
+2015-02-10 00:03:21,851 [Thread-145:5772] [django.db.backends:91] [DEBUG]- (0.000) DELETE FROM `django_session` WHERE `django_session`.`session_key` IN ('frm4qsv8sut8hpzgbvsqe99ly02yavux'); args=(u'frm4qsv8sut8hpzgbvsqe99ly02yavux',)
+2015-02-10 00:03:21,878 [Thread-145:5772] [django.db.backends:91] [DEBUG]- (0.000) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'a6yg0lnormmeo1gooxq9eh9jfqs9orti' LIMIT 1; args=(u'a6yg0lnormmeo1gooxq9eh9jfqs9orti',)
+2015-02-10 00:03:21,878 [Thread-145:5772] [django.db.backends:91] [DEBUG]- (0.000) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('a6yg0lnormmeo1gooxq9eh9jfqs9orti', 'NjNmMzhhY2FlMzBmNzkxZTZjZmYyZDhjOGYxZTJiMmFhNTA5ZTAxNjp7fQ==', '2015-02-23 16:03:21'); args=(u'a6yg0lnormmeo1gooxq9eh9jfqs9orti', u'NjNmMzhhY2FlMzBmNzkxZTZjZmYyZDhjOGYxZTJiMmFhNTA5ZTAxNjp7fQ==', u'2015-02-23 16:03:21')
+2015-02-10 00:03:21,907 [Thread-145:5772] [django.db.backends:91] [DEBUG]- (0.002) UPDATE `auth_user` SET `last_login` = '2015-02-09 16:03:21' WHERE `auth_user`.`id` = 1; args=(u'2015-02-09 16:03:21', 1)
+2015-02-10 00:03:21,936 [Thread-145:5772] [django.db.backends:91] [DEBUG]- (0.001) UPDATE `django_session` SET `session_data` = 'YWFjNzExMTY0MGQzNGYzZTA4YjM3Yjk1Mzg5NmNiYzRiMzBlYzhhODp7Il9hdXRoX3VzZXJfaGFzaCI6IjExYTYzNjljMzAyNGQ1ZTBlNjFiMGM5MzMwNjNhMjRkZGVkZmViYWQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9', `expire_date` = '2015-02-23 16:03:21' WHERE `django_session`.`session_key` = 'a6yg0lnormmeo1gooxq9eh9jfqs9orti'; args=(u'YWFjNzExMTY0MGQzNGYzZTA4YjM3Yjk1Mzg5NmNiYzRiMzBlYzhhODp7Il9hdXRoX3VzZXJfaGFzaCI6IjExYTYzNjljMzAyNGQ1ZTBlNjFiMGM5MzMwNjNhMjRkZGVkZmViYWQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9', u'2015-02-23 16:03:21', u'a6yg0lnormmeo1gooxq9eh9jfqs9orti')
+--进入首页
+--进入首页
+--进入首页
+2015-02-10 00:09:05,734 [Thread-178:2988] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:09:05,736 [Thread-178:2988] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:09:05,739 [Thread-178:2988] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 10; args=()
+2015-02-10 00:09:13,789 [Thread-179:4156] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:09:13,790 [Thread-179:4156] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:09:13,792 [Thread-179:4156] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 10 OFFSET 10; args=()
+2015-02-10 00:09:14,750 [Thread-180:6236] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:09:14,750 [Thread-180:6236] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:09:14,753 [Thread-180:6236] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 10 OFFSET 20; args=()
+2015-02-10 00:09:15,438 [Thread-181:5692] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:09:15,440 [Thread-181:5692] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:09:15,441 [Thread-181:5692] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 5 OFFSET 30; args=()
+2015-02-10 00:09:59,460 [Thread-182:3820] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:09:59,460 [Thread-182:3820] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:09:59,463 [Thread-182:3820] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 10; args=()
+2015-02-10 00:10:12,663 [Thread-183:4436] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:10:12,664 [Thread-183:4436] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow`; args=()
+2015-02-10 00:10:15,543 [Thread-184:1504] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:10:15,546 [Thread-184:1504] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow` WHERE `webapp_business_flow`.`id` = 30 LIMIT 21; args=(30,)
+2015-02-10 00:10:15,552 [Thread-184:1504] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow_stp`.`id`, `webapp_business_flow_stp`.`desc`, `webapp_business_flow_stp`.`method`, `webapp_business_flow_stp`.`element`, `webapp_business_flow_stp`.`action`, `webapp_business_flow_stp`.`value`, `webapp_business_flow_stp`.`case_name_id` FROM `webapp_business_flow_stp` WHERE `webapp_business_flow_stp`.`case_name_id` = 30; args=(30,)
+2015-02-10 00:10:15,558 [Thread-184:1504] [django.db.backends:91] [DEBUG]- (0.002) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+2015-02-10 00:13:04,499 [Thread-185:5256] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:13:04,500 [Thread-185:5256] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:13:50,867 [Thread-186:7060] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:13:50,868 [Thread-186:7060] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:21:52,130 [Thread-189:6312] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:21:52,131 [Thread-189:6312] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:21:56,470 [Thread-190:5748] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:21:56,470 [Thread-190:5748] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:21:58,762 [Thread-191:5312] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:21:58,763 [Thread-191:5312] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow`; args=()
+2015-02-10 00:22:01,592 [Thread-192:6440] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:22:01,594 [Thread-192:6440] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:29:27,605 [Thread-193:5340] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:29:27,605 [Thread-193:5340] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:30:07,809 [Thread-195:4036] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:30:07,811 [Thread-195:4036] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+读取用例列表成功
+2015-02-10 00:30:09,519 [Thread-196:5704] [django.request:231] [ERROR]- Internal Server Error: /addbusiness/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Project\autotest\webapp\views.py", line 190, in add_business
+    return render_to_response("addbusiness.html", {"case_list": case_list})
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 25, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 172, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 148, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\linaro_django_pagination\templatetags\pagination_tags.py", line 157, in render
+    "You need to enable 'django.core.context_processors.request'."
+ImproperlyConfigured: You need to enable 'django.core.context_processors.request'. See linaro-django-pagination/README file for TEMPLATE_CONTEXT_PROCESSORS details
+2015-02-10 00:30:09,605 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:30:09,607 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,608 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,608 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,609 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,611 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,612 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,614 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,615 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,617 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,618 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,619 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,621 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,624 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,625 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,627 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,630 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,631 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,632 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:09,634 [Thread-196:5704] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+读取用例列表成功
+2015-02-10 00:30:43,068 [Thread-202:6624] [django.request:231] [ERROR]- Internal Server Error: /addbusiness/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Project\autotest\webapp\views.py", line 190, in add_business
+    return render_to_response("addbusiness.html", {"case_list": case_list})
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 25, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 172, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 148, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\linaro_django_pagination\templatetags\pagination_tags.py", line 157, in render
+    "You need to enable 'django.core.context_processors.request'."
+ImproperlyConfigured: You need to enable 'django.core.context_processors.request'. See linaro-django-pagination/README file for TEMPLATE_CONTEXT_PROCESSORS details
+2015-02-10 00:30:43,168 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:30:43,170 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,171 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,173 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,174 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,177 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,177 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,180 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,180 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,183 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,184 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,187 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,188 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,193 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,194 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,197 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,200 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,201 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,203 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:43,206 [Thread-202:6624] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:50,572 [Thread-203:6284] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:30:50,573 [Thread-203:6284] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow`; args=()
+读取用例列表成功
+2015-02-10 00:30:55,796 [Thread-208:6412] [django.request:231] [ERROR]- Internal Server Error: /addbusiness/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Project\autotest\webapp\views.py", line 190, in add_business
+    return render_to_response("addbusiness.html", {"case_list": case_list})
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 25, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 172, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 148, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\linaro_django_pagination\templatetags\pagination_tags.py", line 157, in render
+    "You need to enable 'django.core.context_processors.request'."
+ImproperlyConfigured: You need to enable 'django.core.context_processors.request'. See linaro-django-pagination/README file for TEMPLATE_CONTEXT_PROCESSORS details
+2015-02-10 00:30:55,858 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:30:55,858 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,861 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,861 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,862 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,864 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,865 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,867 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,868 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,869 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,871 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,871 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,874 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,877 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,878 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,880 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,881 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,884 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,884 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:30:55,885 [Thread-208:6412] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+读取用例列表成功
+2015-02-10 00:31:12,427 [Thread-209:7128] [django.request:231] [ERROR]- Internal Server Error: /addbusiness/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Project\autotest\webapp\views.py", line 190, in add_business
+    return render_to_response("addbusiness.html", {"case_list": case_list})
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 25, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 172, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 148, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\linaro_django_pagination\templatetags\pagination_tags.py", line 157, in render
+    "You need to enable 'django.core.context_processors.request'."
+ImproperlyConfigured: You need to enable 'django.core.context_processors.request'. See linaro-django-pagination/README file for TEMPLATE_CONTEXT_PROCESSORS details
+2015-02-10 00:31:12,500 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:31:12,500 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,503 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,506 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,532 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.018) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,533 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,536 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,539 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,539 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,542 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,542 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,543 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,546 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,549 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,552 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,553 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,556 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,559 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,563 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:12,565 [Thread-209:7128] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+读取用例列表成功
+2015-02-10 00:31:22,651 [Thread-210:4024] [django.request:231] [ERROR]- Internal Server Error: /addbusiness/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Project\autotest\webapp\views.py", line 190, in add_business
+    return render_to_response("addbusiness.html", {"case_list": case_list})
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 25, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 172, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 148, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\linaro_django_pagination\templatetags\pagination_tags.py", line 157, in render
+    "You need to enable 'django.core.context_processors.request'."
+ImproperlyConfigured: You need to enable 'django.core.context_processors.request'. See linaro-django-pagination/README file for TEMPLATE_CONTEXT_PROCESSORS details
+2015-02-10 00:31:22,710 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:31:22,711 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,713 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,714 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,716 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,717 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,717 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,719 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,720 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,721 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,723 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,724 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,726 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,729 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,730 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,732 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,733 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,736 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,736 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:31:22,737 [Thread-210:4024] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:31,201 [Thread-212:6088] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:33:31,203 [Thread-212:6088] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow`; args=()
+读取用例列表成功
+2015-02-10 00:33:34,500 [Thread-220:4932] [django.request:231] [ERROR]- Internal Server Error: /addbusiness/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Project\autotest\webapp\views.py", line 190, in add_business
+    return render_to_response("addbusiness.html", {"case_list": case_list})
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 25, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 172, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 148, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\linaro_django_pagination\templatetags\pagination_tags.py", line 157, in render
+    "You need to enable 'django.core.context_processors.request'."
+ImproperlyConfigured: You need to enable 'django.core.context_processors.request'. See linaro-django-pagination/README file for TEMPLATE_CONTEXT_PROCESSORS details
+2015-02-10 00:33:34,561 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:33:34,561 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,562 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,563 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,565 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,565 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,568 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,569 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,569 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,571 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,572 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,573 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,575 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,578 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,579 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,582 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,584 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,585 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,586 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:33:34,588 [Thread-220:4932] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:24,594 [Thread-221:2576] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:34:24,595 [Thread-221:2576] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:34:28,548 [Thread-222:4592] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:34:28,549 [Thread-222:4592] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+读取用例列表成功
+2015-02-10 00:34:40,927 [Thread-224:6328] [django.request:231] [ERROR]- Internal Server Error: /addbusiness/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Project\autotest\webapp\views.py", line 190, in add_business
+    return render_to_response("addbusiness.html", {"case_list": case_list})
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 25, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 172, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 148, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\linaro_django_pagination\templatetags\pagination_tags.py", line 157, in render
+    "You need to enable 'django.core.context_processors.request'."
+ImproperlyConfigured: You need to enable 'django.core.context_processors.request'. See linaro-django-pagination/README file for TEMPLATE_CONTEXT_PROCESSORS details
+2015-02-10 00:34:41,015 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:34:41,016 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,017 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,019 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,020 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,023 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,023 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,026 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,028 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,029 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,030 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,032 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,033 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,038 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,040 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,042 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,045 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,046 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,049 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:41,051 [Thread-224:6328] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+读取用例列表成功
+2015-02-10 00:34:50,930 [Thread-225:4712] [django.request:231] [ERROR]- Internal Server Error: /addbusiness/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Project\autotest\webapp\views.py", line 190, in add_business
+    return render_to_response("addbusiness.html", {"case_list": case_list})
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 25, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 172, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 148, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\linaro_django_pagination\templatetags\pagination_tags.py", line 157, in render
+    "You need to enable 'django.core.context_processors.request'."
+ImproperlyConfigured: You need to enable 'django.core.context_processors.request'. See linaro-django-pagination/README file for TEMPLATE_CONTEXT_PROCESSORS details
+2015-02-10 00:34:50,996 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:34:50,997 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,000 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,000 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,002 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,003 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,003 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,006 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,006 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,007 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,009 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,010 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,012 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,015 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,016 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,019 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,020 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,022 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,023 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:51,025 [Thread-225:4712] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+读取用例列表成功
+2015-02-10 00:34:57,236 [Thread-226:4952] [django.request:231] [ERROR]- Internal Server Error: /addbusiness/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Project\autotest\webapp\views.py", line 190, in add_business
+    return render_to_response("addbusiness.html", {"case_list": case_list})
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 25, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 172, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 148, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\linaro_django_pagination\templatetags\pagination_tags.py", line 157, in render
+    "You need to enable 'django.core.context_processors.request'."
+ImproperlyConfigured: You need to enable 'django.core.context_processors.request'. See linaro-django-pagination/README file for TEMPLATE_CONTEXT_PROCESSORS details
+2015-02-10 00:34:57,296 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:34:57,298 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,299 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,301 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,302 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,302 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,303 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,305 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,306 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,308 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,309 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,311 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,312 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,315 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,316 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,318 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,319 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,322 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,322 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:34:57,323 [Thread-226:4952] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:35:14,249 [Thread-227:6292] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:35:14,250 [Thread-227:6292] [django.db.backends:91] [DEBUG]- (0.001) INSERT INTO `webapp_test_case` (`name`, `desc`, `run_mode`, `note`, `data`, `case_nature`, `url`, `funtion_id_id`) VALUES ('官方公布官方', '', '', '', '2015-02-09 16:35:14', '正案例', '哄抬糖价很好听', NULL); args=[u'\u5b98\u65b9\u516c\u5e03\u5b98\u65b9', u'', u'', u'', u'2015-02-09 16:35:14', u'\u6b63\u6848\u4f8b', u'\u54c4\u62ac\u7cd6\u4ef7\u5f88\u597d\u542c', None]
+2015-02-10 00:35:14,295 [Thread-227:6292] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` WHERE `webapp_test_case`.`name` = '官方公布官方' LIMIT 21; args=(u'\u5b98\u65b9\u516c\u5e03\u5b98\u65b9',)
+2015-02-10 00:35:14,296 [Thread-227:6292] [django.db.backends:91] [DEBUG]- (0.001) INSERT INTO `webapp_test_step` (`desc`, `method`, `element`, `action`, `value`, `case_name_id`) VALUES ('', 'id', '海通集团与', '输入', '和你好好', 52); args=[u'', u'id', u'\u6d77\u901a\u96c6\u56e2\u4e0e', u'\u8f93\u5165', u'\u548c\u4f60\u597d\u597d', 52]
+2015-02-10 00:35:16,411 [Thread-228:6756] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:35:16,411 [Thread-228:6756] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:35:16,413 [Thread-228:6756] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 1; args=()
+连接的客户端ip是:172.16.6.6，当前用例ID是:52
+2015-02-10 00:35:21,062 [Thread-229:6172] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:35:21,063 [Thread-229:6172] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:35:21,065 [Thread-229:6172] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 1; args=()
+读取用例列表成功
+2015-02-10 00:36:08,030 [Thread-230:6812] [django.request:231] [ERROR]- Internal Server Error: /addbusiness/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Project\autotest\webapp\views.py", line 190, in add_business
+    return render_to_response("addbusiness.html", {"case_list": case_list})
+  File "C:\Python27\lib\site-packages\django\shortcuts.py", line 25, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 172, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 148, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 80, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\linaro_django_pagination\templatetags\pagination_tags.py", line 157, in render
+    "You need to enable 'django.core.context_processors.request'."
+ImproperlyConfigured: You need to enable 'django.core.context_processors.request'. See linaro-django-pagination/README file for TEMPLATE_CONTEXT_PROCESSORS details
+2015-02-10 00:36:08,091 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:36:08,092 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,094 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,095 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,095 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,098 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,098 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,101 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,101 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,102 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,105 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,105 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,108 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,111 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,112 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,115 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,117 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,118 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,119 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+2015-02-10 00:36:08,121 [Thread-230:6812] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 21; args=()
+--进入首页
+2015-02-10 00:37:29,674 [Thread-233:4860] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:37:29,674 [Thread-233:4860] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:37:29,676 [Thread-233:4860] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 1; args=()
+2015-02-10 00:38:00,887 [Thread-234:4940] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:38:00,888 [Thread-234:4940] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:38:05,523 [Thread-242:5096] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:38:05,523 [Thread-242:5096] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-10 00:39:14,009 [Thread-243:988] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 00:39:14,009 [Thread-243:988] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()

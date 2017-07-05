@@ -1,0 +1,54 @@
+{% for i in case_stp %}
+<tr id="tr0">
+    <td id="td00">
+        <input type="checkbox" class="checkbox_step" id="checkbox" name="checkbox">
+    </td>
+    <td>1</td>
+    <td>
+        <input type="text" name="desc" value= '{{ i.desc }}'>
+    </td>
+
+    <td><select name='action' class="action">
+        <option value='{{ i.action }}'>{{ i.action }}</option>
+        </select>
+    </td>
+
+    <td>
+        <input type="text" name="value" value='{{ i.value }}'>
+    </td>
+
+    <td>
+        <input type="hidden" class="ele_id" name="ele_id" value="{{ i.ele_id }}">
+        <a href="#" class="ele_name" style="color: lightseagreen">{{ i.ele_name }}</a>
+    </td>
+</tr>
+{% endfor %}
+
+{#    进入页面就加载method_ajax中的方法#}
+<script>
+    $(function(){
+        $.post("/method_ajax/",$(this).serialize(),function(result){
+            $(".opt").append(result)
+        })
+        $.post("/action_ajax/",$(this).serialize(),function(result){
+            $(".action").append(result)
+        })
+    });
+</script>
+
+{#点击元素显示详情#}
+<script>
+    $(".ele_name").click(function(){
+        var ele_id = $(this).prev().val();
+        var ck_index = $(".ele_name").index($(this));
+        $("#checkbox_index").val(ck_index);
+
+        $("#mask").show();
+        showDialog();
+        $("#element_msg").show();
+        $.post("/element_msg/",{ele_id:ele_id},function(result){
+            $("#msg").children().children().find("[class=thead]").siblings().remove()
+            $("#msg").children().append(result)
+        })
+    })
+</script>

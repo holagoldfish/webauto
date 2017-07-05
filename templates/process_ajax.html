@@ -1,0 +1,49 @@
+<tr>
+    <td>
+        <input type="checkbox" class="checkbox_step" name="checkbox">
+    </td>
+    <td>1</td>
+    <td>
+        <input type="text" name="desc">
+    </td>
+    <td>
+        <select name="action">
+            {% for i in action %}
+                <option value="{{ i.name }}">{{ i.name }}</option>
+            {% endfor %}
+        </select>
+    </td>
+    <td>
+        <input type="text" name="value">
+    </td>
+    <td>
+        <input type="hidden" class="ele_id" name="ele_id" value="">
+        <a href="#" class="ele_name" style="color: red">添加元素</a>
+    </td>
+</tr>
+
+{#点击元素显示详情#}
+<script>
+    $(".ele_name").click(function(){
+        var ele_id = $(this).prev().val();
+        var ck_index = $(".ele_name").index($(this));
+        $("#checkbox_index").val(ck_index);
+
+        $("#mask").show();
+        showDialog();
+        $("#element_msg").show();
+        $.post("/element_msg/",{ele_id:ele_id},function(result){
+            $("#msg").children().children().find("[class=thead]").siblings().remove()
+            $("#msg").children().append(result)
+        })
+    })
+
+{#新增步骤，排序#}
+    $(function(){
+        var checkbox_list = $(".checkbox_step")
+        checkbox_list.eq(checkbox_list.length-1).parent().next().text(checkbox_list.length)
+    })
+</script>
+
+
+

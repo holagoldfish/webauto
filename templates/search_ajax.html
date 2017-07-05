@@ -1,0 +1,17 @@
+{% for i in mo %}
+    <tr class="atr">
+        <td><input type='checkbox' class='checkbox' id='' name='checkbox'>
+            <input type="hidden"  id="objId" value="{{ i.id }}">
+        </td>
+        <td><input type='text' name='objName' value='{{ i.objName }}' readonly="readonly"/>
+        </td>
+        <td><input type='text' name='key1' value='{{ i.key1 }}' readonly="readonly"/>
+        </td>
+        <td><input type='text' name='key2' value='{{ i.key2 }}' readonly="readonly"/>
+        </td>
+        <td><input type='text' name='key3' value='{{ i.key3 }}' readonly="readonly"/>
+        </td>
+        <td><input type='text' name='type' value='{{ i.type }}' readonly="readonly"/>
+        </td>
+    </tr>
+{% endfor %}

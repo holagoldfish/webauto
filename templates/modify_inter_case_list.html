@@ -1,0 +1,99 @@
+{% extends "index.html" %}
+
+{% load pagination_tags %}
+{% block context %}
+	<div class="right">
+		<div class="center" onClick="show_menu()"></div>
+		<div class="rightbar">
+			<div class="top"> 管理平台 &gt; <span>{{ current_project }}</span><span>&gt;维护接口测试用例</span></div>
+            <div class="btnlist re_position">
+                    <a class="a_btn" id="save" href="#">保存</a>
+                    <a class="a_btn delete_case" style="margin: 0 15px;" href="#">删除用例</a>
+            </div>
+			<div class="tablelist mt_15">
+				<table class="list01 list03">
+					<tr class="thead">
+                        <th width="45"></th>
+						<th width="60">ID</th>
+						<th>用例名称</th>
+						<th>案例性质</th>
+						<th>创建时间</th>
+						<th>维护</th>
+                        <th>调试</th>
+
+
+					</tr>
+
+                    {% for i in case_list %}
+                        <form id="form1" name="form1" method="get" action="/modify_inter_case/">
+					<tr >
+                        <td>
+							<input type="checkbox" class="checkbox" id="" value="{{ i.id }}">
+						</td>
+						<td>{{ i.id }}</td>
+						<td>{{ i.caseName }}</td>
+                        <td>{{ i.caseType }}</td>
+						<td>{{ i.modifyDate }}</td>						<td>
+                            <input class="a_btn"  type="submit" name={{ i.id }} value="维护用例">
+					    </form>
+                        </td>
+                        <td>
+                        <form id="form_debug" class="form_debug" name="form1" method="post" action="">
+                            <input type="hidden" name="pro_name" value="{{ current_project }}">
+                            <input type="hidden" name="case_id" value="{{ i.id }}">
+                        <input class="a_btn debug" type="submit" name="debug_btn" value="测试调试">
+						</form>
+                        </td>
+
+					</tr>
+
+					{% endfor  %}
+
+				</table>
+			</div>
+            <div  class="pagination">
+                {% if contacts.has_previous %}
+                    <a href="?page={{ contacts.previous_page_number }}">上一页</a>
+                {% else %}
+                    <a href="#">上一页</a>
+                {% endif %}
+                {# topics.paginator.page_range 这个函数返回包含一个所有页码数的 range 对象 #}
+                {# 即 range(1, topics.paginator.num_pages + 1) #}
+                {% for page_number in contacts.paginator.page_range %}
+                    {% ifequal page_number  contacts.number %}
+                        {{ page_number }}
+                    {% else %}
+                        <a href="?page={{ page_number }}">{{ page_number }}</a>
+                    {% endifequal %}
+                {% endfor %}
+                {% if contacts.has_next %}
+                    <a href="?page={{ contacts.next_page_number }}">下一页</a>
+                    {% else %}
+                    <a href="#">下一页</a>
+                {% endif %}
+                {% if contacts.paginator.num_pages %}
+                <a>共{{ contacts.paginator.num_pages }}页{{ contacts.paginator.count }}条</a>
+                {% endif %}
+            </div>
+
+		</div>
+
+	</div>
+
+{% load staticfiles %}
+    <script type="text/javascript" src="{% static "js/jquery-1.10.1.js" %}"></script>
+<script>
+    $("#save").click(function(){
+        alert("此按钮功能未开发")
+    })
+</script>
+<script>
+    $(".debug").click(function(){
+        alert("请确认打开调试客户端")
+    })
+</script>
+{% endblock %}
+
+
+
+

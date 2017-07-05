@@ -1,0 +1,191 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block context %}
+<div class="right">
+    <form id="save_perform" name="from_case" method="post" action="">
+		<div class="center" onclick="show_menu()"></div>
+		<div class="rightbar">
+			<div class="top"> 管理平台 &gt; <span>新增测试执行</span></div>
+			<div class="search">
+				<form action="">
+					<span>测试执行名称：</span><input style="widows: 400px;" id='perform' name="perform_n" type="text" required autofocus  placeholder="请输入业务流用例名称">
+                    <input type="hidden" name="user_name" value={{ user_name  }} >
+				</form>
+			</div>
+
+			<div class="btnlist re_position">
+				<a class="a_btn addcase_btn">添加用例</a>
+                <a class="a_btn addcase_btn02">添加业务流</a>
+				<a class="a_btn mrl_15 delete_case" href="#">删除用例</a>
+                <input class="a_btn" type="submit"  name="Submit" value="保存测试执行">
+			</div>
+
+
+			<div class="tablelist">
+				<table class="list01 list02 tb" id="aabb">
+					<tr class="thead">
+						<th width="45"></th>
+						<th>用例类型</th>
+						<th>用例名称</th>
+						<th>用例性质</th>
+						<th>创建时间</th>
+                        <th>用例维护</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+    </form>
+</div>
+
+
+
+
+	<div id="mask" class="mask"></div>
+	<div class="dialog test_cases" id="test_cases01">
+		<div class="test_list mb_20"  >
+            <h3 style="margin-left: 300px">添加用例
+                <a style="float: right;color: #d43f3a" class="close_div" href="#">[关闭]</a>
+            </h3>
+            <div>
+                <select id="select_case">
+                    <option id="p_name" name="p_name" value =""></option>
+                    {% for project in project_obj %}
+                  <option id="p_name" name="p_name" value ="{{ project.id }}">{{ project.name }}</option>
+                    {% endfor %}
+                </select>
+                <input class="a_btn"  id="add_case" type="button" value="查询">
+                <a class="a_btn" id="ad_case" style="margin-left: 200px">保存</a>
+                <a class="a_btn close_div" >取消</a>
+
+            </div>
+            <div  style="max-height: 600px;overflow-y: scroll">
+                <table class="list01 list02" id="tb" >
+                    <tr class="thead">
+                        <th width="45">计数</th>
+                        <th width="45"></th>
+                         <th>用例名称</th>
+                        <th width="60">用例性质</th>
+                    </tr>
+                </table>
+            </div>
+		</div>
+	</div>
+
+    	<div class="dialog test_cases" id="test_cases02">
+		<div class="test_list mb_20">
+             <h3 style="margin-left: 300px">添加业务流
+                <a style="float: right;color: #d43f3a" class="close_div" href="#">[关闭]</a>
+            </h3>
+            <div>
+                <select id="select_business">
+                    <option id="p_name" name="p_name" value =""></option>
+                    {% for project in project_obj %}
+                  <option id="p_name" name="p_name" value ="{{ project.id }}">{{ project.name }}</option>
+                    {% endfor %}
+                </select>
+                <input class="a_btn"  id="add_business" type="button" value="查询">
+                <a class="a_btn" id="addbusiness" style="margin-left: 200px">保存</a>
+                <a class="a_btn close_div" >取消</a>
+
+            </div>
+            <div  style="max-height: 600px;overflow-y: scroll">
+                <table class="list01 list02" id="business" >
+                    <tr class="thead">
+                        <th width="45">计数</th>
+                        <th width="45"></th>
+                         <th>用例名称</th>
+                        <th width="60">用例性质</th>
+                    </tr>
+                </table>
+            </div>
+		</div>
+	</div>
+
+{% load staticfiles %}
+<script type="text/javascript" src="{% static "js/jquery-1.10.1.js" %}"></script>
+
+{#    添加用例#}
+    <script>
+        $("#ad_case").click(function(){
+            var aabbs = $("#test_cases01 input[type=checkbox]:checked");
+                var idStr = [];
+                for(var i =0;i<aabbs.length;i++){
+                    idStr.push(aabbs[i].name);
+                }
+                $.post('/perform_ajax/',{case:idStr},function(data){
+                    $("#aabb").append(data);
+                    $("#test_cases01").hide()
+                    $("#mask").hide()
+                });
+        })
+    </script>
+
+
+
+
+
+
+{# 添加业务流#}
+    <script>
+    $("#addbusiness").click(function(){
+        var aabbs = $("#test_cases02 input[type=checkbox]:checked");
+                var idStr = [];
+                for(var i =0;i<aabbs.length;i++){
+                    idStr.push(aabbs[i].name);
+                }
+                $.post('/perform_ajax/',{business:idStr},function(data){
+                    $("#aabb").append(data);
+                    $("#test_cases02").hide();
+                    $("#mask").hide()
+                });
+    })
+    </script>
+
+
+
+<script>
+    $("#save_perform").submit(function(event){
+        event.preventDefault();
+        $.post("/add_perform/",$(this).serialize(),function(result){
+            alert(result);
+            if (result == "保存成功"){}
+            location.reload();
+        })
+    })
+</script>
+
+
+{#  通过ajax动态筛选项目用例  #}
+<script>
+    $("#add_case").click(function(){
+{#       取下拉框中当前项目的ID#}
+        var obj=document.getElementById('select_case');
+        var text=obj.options[obj.selectedIndex].value;
+        if(text ==""|text==null){
+            $("#test_list").empty();
+        }
+        else{
+            $.post("/perform_case_ajax/",{"pro_id":text,"type":"case"},function(result){
+                $(".tr_list").hide();
+                $("#tb").append(result);
+            })
+            }
+    })
+</script>
+
+    {#  通过ajax动态筛选项目业务流  #}
+<script>
+    $("#add_business").click(function(){
+        var obj=document.getElementById('select_business');
+        var text=obj.options[obj.selectedIndex].value;
+        if(text ==""|text==null){
+            $("#business_list").empty();
+        }
+        else
+        {$.post("/perform_case_ajax/",{"pro_id":text,"type":"business"},function(result){
+                $(".tr_list").hide();
+                $("#business").append(result);
+            })}
+    })
+</script>
+{% endblock %}

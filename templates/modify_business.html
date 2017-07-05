@@ -1,0 +1,184 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block context %}
+    <form id="modify_business"  name="from_case" method="post" action="">
+    <div class="right" xmlns="http://www.w3.org/1999/html">
+		<div class="center" onclick="show_menu()"></div>
+		<div class="rightbar">
+			<div class="top"> 管理平台 &gt;<span id="current_pro_name">{{ current_pro_name }}</span> <span>&gt;修改业务流用例</span></div>
+			<div class="search">
+
+				<form action="">
+                    <div>
+                    <span>业务流ID：{{ business_obj.id }}</span>
+                    </div>
+					<span>业务流名称：</span><input style="width: 400px" type="text" id='modify_business' name="ywlname" value={{ business_obj.name }}  placeholder="请输入业务流用例名称" required autofocus>
+					<span>例：前台注册-登录-资质认证申请-后台审核成功-发布资产-后台资产审核-前台首页资产展示</span>
+                    <input type="hidden"   name="project_id" value='{{ project_id }}'>
+                    <input type="hidden" id="business_id"  name="business_id" value='{{ business_id }}'>
+                </form>
+
+			</div>
+
+			<div class="btnlist re_position">
+				<a class="a_btn addcase_btn">添加用例</a>
+                <a class="a_btn mrl_15 delete_mdy_perform" href="#">删除用例</a>
+                <input class="a_btn" type="submit" name="{{ business_obj.id }}" value="保存">
+                <input class="a_btn" type="button" id="sort" value="排序"/>
+			</div>
+
+
+			
+			<div class="tablelist">
+				<table class="list01 list02 tb" id="aabb">
+					<tr class="thead">
+						<th width="45"></th>
+						<th>步骤</th>
+						<th>名称</th>
+						<th>时间</th>
+						<th>性质</th>
+                        <th>维护</th>
+					</tr>
+                    {% for stp in business_stp %}
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="checkbox tb" name="checkbox" id="addcass">
+                        </td>
+                        <td>1</td>
+                        <td><input type="text" name="case_name" value='{{ stp.name }}'readonly="readonly" ></td>
+                        <td><input type="text" name="case_date" value='{{ stp.date }}'readonly="readonly" ></td>
+                        <td><input type="text" name="case_nature" value='{{ stp.case_nature }}' readonly="readonly" ></td>
+                        <input type="hidden" name="case_id" value="{{ stp.case_id }}">
+                        <td><input class="a_btn mdy_case" type="button" name="{{ stp.case_id }}" value='维护用例'></td>
+                    </tr>
+                    {% endfor  %}
+				</table>
+			</div>
+		</div>
+	</div>
+
+</form>
+	
+
+	<div id="mask"  class="mask"></div>
+
+	<div id='test_cases01'  class="dialog test_cases">
+		<div class="test_list mb_20">
+            <h3 style="margin-left: 300px">添加用例
+                <a style="float: right;color: #d43f3a" class="close_div" href="#">[关闭]</a>
+            </h3>
+            <div>
+                <select id="select_case">
+                    <option id="p_name" name="p_name" value =""></option>
+                    {% for project in project_obj %}
+                  <option id="p_name" name="p_name" value ="{{ project.id }}">{{ project.name }}</option>
+                    {% endfor %}
+                </select>
+                <input class="a_btn"  id="add_case" type="button" value="查询">
+                <a class="a_btn" id="addcase" style="margin-left: 200px">保存</a>
+                <a class="a_btn close_div" >取消</a>
+
+            </div>
+            <div  style="max-height: 600px;overflow-y: scroll">
+                <table class="list01 list02" id="tb" >
+                    <tr class="thead">
+                        <th width="45">计数</th>
+                        <th width="45"></th>
+                         <th>用例名称</th>
+                        <th width="60">用例性质</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% load staticfiles %}
+<script type="text/javascript" src="{% static "js/jquery-1.10.1.js" %}"></script>
+
+<script>
+    $("#modify_business").submit(function(event){
+        event.preventDefault();
+        var id = $("#business_id").val()
+        var url = "/modify_business/?"+id+"=维护业务流";
+        var pro_name = $("#current_pro_name").text();
+        $.post(url,$(this).serialize(),function(result){
+            alert(result);
+            if (result =="修改成功"){
+                location.href ="/business_list/?pro_name="+pro_name;
+            }
+
+        })
+    })
+</script>
+{#    进入页面就加载method_ajax中的方法#}
+<script>
+    $(function(){
+        $.post("/method_ajax/",$(this).serialize(),function(result){
+            $(".opt").append(result)
+        })
+        $.post("/action_ajax/",$(this).serialize(),function(result){
+            $(".action").append(result)
+        })
+    });
+</script>
+
+
+{#    添加用例功能#}
+ <script>
+    $("#addcase").click(function(){
+        var aabbs = $("#test_cases01 input[type=checkbox]:checked");
+                var idStr = [];
+                for(var i =0;i<aabbs.length;i++){
+                    idStr.push(aabbs[i].name);
+                }
+                $.post('/business_ajax/',{id:idStr},function(data){
+                    $("#aabb").append(data);
+                    $("#test_cases01").hide()
+                    $("#mask").hide()
+                });
+    })
+    </script>
+    {# 查询用例功能#}
+    <script>
+    $("#add_case").click(function(){
+        var obj=document.getElementById('select_case');
+        var text=obj.options[obj.selectedIndex].value;
+        if(text ==""|text==null){
+            $("#test_list").empty();
+        }
+        else{
+            $.post("/perform_case_ajax/",{"pro_id":text,"type":"case"},function(result){
+                $(".tr_list").hide();
+                $("#tb").append(result);
+            })
+            }
+    })
+</script>
+
+
+{#修改业务流页面点击维护用例跳转到修改用例页面#}
+    <script>
+    $(".mdy_case").click(function(){
+        var name = $(this).attr("name");
+        location.href = "/modify_process/?name="+ name
+    })
+
+{#排序按钮#}
+     $("#sort").click(function(){
+        var checkbox_list = $(".checkbox_step");
+        for(i=0;i<checkbox_list.length;i++){
+            checkbox_list.eq(i).parent().next().text(i+1)
+        }
+    })
+{#    进入页面自动排序#}
+    $(function () {
+        var checkbox_list = $(".checkbox");
+        for(i=0;i<checkbox_list.length;i++){
+            checkbox_list.eq(i).parent().next().text(i+1)
+        }
+    })
+    </script>
+{% endblock %}
+
+
+

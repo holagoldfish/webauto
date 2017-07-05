@@ -1,0 +1,342 @@
+{% extends "index.html" %}
+{% load pagination_tags %}
+{% block context %}
+	<div class="right">
+		<div class="center" onClick="show_menu()"></div>
+		<div class="rightbar">
+            <form id="env_list" name="env_list">
+			<div class="top"> 管理平台 &gt; <span id="cur_name">{{ current_project }}</span><span>&gt;接口测试环境管理</span></div>
+            <div class="btnlist re_position">
+                <input type="button" class="a_btn add_hj" value="新增环境配置">
+                <input type="button" class="a_btn mdy_hj" value="编辑环境配置">
+                <input type="button" class="a_btn del_hj" name="del_hj" value="删除环境配置">
+                <input type="hidden" id="del_env_id" name="del_env_id" >
+            </div>
+			<div class="tablelist mt_15">
+				<table class="list01 list03">
+					<tr class="thead">
+                        <th width="45"></th>
+						<th width="250">项目</th>
+                        <th width="250">环境名称</th>
+						<th width="450">数据库地址</th>
+						<th width="150">用户名</th>
+						<th width="150">密码</th>
+						<th width="100">是否启用</th>
+                        <th width="150">接口类型</th>
+					</tr>
+                    {% for i in proInfo %}
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="checkbox" id="" name="">
+                            <input type="hidden" id="proId" name="proId" value="{{ i.proId }}">
+                        </td>
+                        <td class="proName" id="pro_id">{{ i.proName }}</td>
+                        <td class="envName">{{ i.envName }}</td>
+                        <td class="address">{{ i.address }}</td>
+                        <td class="uName">{{ i.uName }}</td>
+                        <td class="pWord">{{ i.pWord }}</td>
+                        <td class="is_used">{{ i.is_used }}</td>
+                        <td class="iType">{{ i.iType }}</td>
+                    </tr>
+                    {% endfor %}
+				</table>
+			</div>
+            </form>
+		</div>
+	</div>
+
+<div id="mask"  class="mask"></div>
+
+    <div class="dialog test_cases add_new_env" id="test_cases01" style="width: 1400px;height: 200px" >
+        <form id="new_env" name="add_new_env"  method="post" action="">
+            <div class="test_list mb_20">
+                <div>
+                <h3 style="margin-left: 650px">新增环境配置
+                    <a style="float: right;color: #d43f3a" class="close_div" href="#">[关闭]</a>
+                </h3>
+                </div>
+                <div style="max-height: 600px;overflow-y: scroll">
+                        <table class="list01 list03">
+                        <tr class="thead">
+                            <th width="45"></th>
+                            <th width="250">项目</th>
+                            <th width="250">环境名称</th>
+                            <th width="400">数据库地址</th>
+                            <th width="150">用户名</th>
+                            <th width="150">密码</th>
+                            <th width="180">是否启用</th>
+                            <th width="120">接口类型</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="checkbox">
+                                <input type="hidden" name="subBtn" value="addNewEnv">
+                            </td>
+                            <td>
+                                <select id='proName' name='proName' class='opt'>
+                                    {% for i in project %}
+                                        <option value="{{ i.name }}">{{ i.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </td>
+                            <td>
+                                <input style="width: 220px;" type="text" id="envName" name="envName" >
+                            </td>
+                            <td>
+                                <input style="width: 380px;" type="text" id="address" name="address" >
+                            </td>
+                            <td>
+                                <input style="width: 120px;" type="text" id="username" name="username" >
+                            </td>
+                            <td>
+                                <input style="width: 120px;" type="text" id="password" name="password" >
+                            </td>
+                            <td>
+                                <select name="radiobutton" id="interFaceType">
+                                    <option value="1">启用</option>
+                                    <option value="0">禁用</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="interFaceType" id="interFaceType">
+                                    <option>开放平台</option>
+                                    <option>jms报文</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div style="margin:0 auto; width: 300px;">
+                    <input class="a_btn save" id="save_btn" type="button" name="subBtn" align="center" value="保存"/>
+                    <a class="a_btn close_div" href="#">取消</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+        <div class="test_cases dialog mdy_env" id="test_cases02" style="width: 1400px;height: 200px" >
+            <form id="mdy_env" name="mdy_env"  method="post" action="">
+                <div class="test_list mb_20">
+                    <div>
+                    <h3 style="margin-left: 650px">修改环境配置
+                        <a style="float: right;color: #d43f3a" class="close_div" href="#">[关闭]</a>
+                    </h3>
+                    </div>
+                    <div style="max-height: 600px;overflow-y: scroll">
+                            <table class="list01 list03">
+                            <tr class="thead">
+                                <th width="45"></th>
+                                <th width="250">项目</th>
+                                <th width="250">环境名称</th>
+                                <th width="400">数据库地址</th>
+                                <th width="150">用户名</th>
+                                <th width="150">密码</th>
+                                <th width="180">是否启用</th>
+                                <th width="120">接口类型</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="checkbox">
+                                    <input type="hidden" name="subBtn" value="mdyEnv">
+                                    <input type="hidden" id="pro_id1" name="pro_id1" value="">
+                                </td>
+                                <td>
+                                    <select id='proName' name='proName' class='opt'>
+                                        {% for i in project %}
+                                            <option value="{{ i.name }}">{{ i.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </td>
+                                <td>
+                                    <input style="width: 220px;" type="text" id="delenvName" name="envName" value="">
+                                </td>
+                                <td>
+                                    <input style="width: 380px;" type="text" id="deladdress" name="address" value="">
+                                </td>
+                                <td>
+                                    <input style="width: 120px;" type="text" id="deluName" name="username" value="">
+                                </td>
+                                <td>
+                                    <input style="width: 120px;" type="text" id="delpWord" name="password" value="">
+                                </td>
+                                <td>
+                                    <select name="radiobutton" id="interFaceType">
+                                        <option value="1">启用</option>
+                                        <option value="0">禁用</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="interFaceType" id="interFaceType">
+                                        <option>开放平台</option>
+                                        <option>jms报文</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div style="margin:0 auto; width: 300px;">
+                        <input class="a_btn save" id="save_mdy_btn" type="button" name="subBtn" align="center" value="保存"/>
+                        <a class="a_btn close_div" href="#">取消</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+{% load staticfiles %}
+    <script type="text/javascript" src="{% static "js/jquery-1.10.1.js" %}"></script>
+{#  新增环境配置相关js  #}
+    <script>
+    function showDialog() {
+        var objW = $(window); //当前窗口
+        var objC = $(".add_new_env"); //对话框
+        var brsW = objW.width();
+        var brsH = objW.height();
+        var sclL = objW.scrollLeft();
+        var sclT = objW.scrollTop();
+        var curW = objC.width();
+        var curH = objC.height();
+        //计算对话框居中时的左边距
+        var left = sclL + (brsW - curW) / 2;
+        //计算对话框居中时的上边距
+        var top = sclT + (brsH - curH) / 2;
+        //设置对话框在页面中的位置
+        objC.css({"left": left, "top": top});
+    }
+    </script>
+
+    <script>
+    /*显示新增环境配置页面*/
+        $(".add_hj").click(function(){
+            $("#mask").show();
+            showDialog();
+            $("#test_cases01").show();
+        })
+    </script>
+
+    <script>
+    /*提交环境配置*/
+        $("#save_btn").click(function(event){
+            event.preventDefault();
+            var url = "/data_base_manager/";
+            $.post(url,$("#new_env").serialize(),function(result){
+                alert(result);
+                if (result == "保存环境参数成功") {
+                    location.href = "/data_base_manager/";
+            }
+            })
+        });
+    </script>
+{#  编辑环境配置相关js  #}
+    <script>
+    function showDialog1() {
+        var objW = $(window); //当前窗口
+        var objC = $(".mdy_env"); //对话框
+        var brsW = objW.width();
+        var brsH = objW.height();
+        var sclL = objW.scrollLeft();
+        var sclT = objW.scrollTop();
+        var curW = objC.width();
+        var curH = objC.height();
+        //计算对话框居中时的左边距
+        var left = sclL + (brsW - curW) / 2;
+        //计算对话框居中时的上边距
+        var top = sclT + (brsH - curH) / 2;
+        //设置对话框在页面中的位置
+        objC.css({"left": left, "top": top});
+    }
+    </script>
+
+    <script>
+    /*显示修改环境配置页面*/
+        $(".mdy_hj").click(function(){
+            $("#mask").show();
+            showDialog1();
+            $(".mdy_env").show();
+            var pro_id="";
+            var ck_list = $(".checkbox");
+            for(i=0;i<ck_list.length;i++){
+                if(ck_list[i].checked==true){
+                    pro_id = ck_list.eq(i).parent().parent().find("[id='proId']").val();
+                    address = ck_list.eq(i).parent().parent().find("[class='address']").text();
+                    uName = ck_list.eq(i).parent().parent().find("[class='uName']").text();
+                    pWord = ck_list.eq(i).parent().parent().find("[class='pWord']").text();
+                    itype = ck_list.eq(i).parent().parent().find("[class='iType']").text();
+                    envName = ck_list.eq(i).parent().parent().find("[class='envName']").text();
+                    $("#pro_id1").val(pro_id);
+                    $("#delenvName").val(envName);
+                    $("#deladdress").val(address);
+                    $("#deluName").val(uName);
+                    $("#delpWord").val(pWord);
+                    $("#delitype").val(itype);
+                }
+            }
+        })
+    </script>
+
+    <script>
+        $("#save_mdy_btn").click(function(event){
+            event.preventDefault();
+            var url = "/data_base_manager/";
+            $.post(url,$("#mdy_env").serialize(),function(result){
+                alert(result);
+                if (result == "修改环境参数成功") {
+                    location.href = "/data_base_manager/";
+            }
+            })
+        })
+    </script>
+
+
+{#  删除环境配置相关js  #}
+    <script>
+        /*删除选中的环境配置*/
+        $(".del_hj").click(function(){
+            var pro_id="";
+            var ck_list = $(".checkbox");
+            for(i=0;i<ck_list.length;i++){
+                if(ck_list[i].checked==true){
+                    pro_id = ck_list.eq(i).parent().parent().find("[id='proId']").val();
+                    ck_list.eq(i).parent().parent().remove();
+                }
+            }
+            var url = "/data_base_manager/";
+            $.post(url,{ subBtn: "删除环境配置", pro_id: pro_id },function(result){
+                alert(result);
+                if (result == "删除环境参数成功") {
+                    location.href = "/data_base_manager/";
+            }
+            })
+        })
+    </script>
+
+    <script>
+    $(".close_div").click(function () {
+        $("#test_cases01").hide();
+        $("#test_cases02").hide();
+        $("#mask").hide()
+    })
+    </script>
+    <script>
+    /* 复选框只能选择一个 */
+    $(function () {
+        var checkbox = $(".checkbox");
+        checkbox.click(function () {
+            var num = 0;
+            for (var i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked) {
+                    num++;
+                }
+            }
+            if (num >= 2) {
+                this.checked = false;
+                alert("只能选择一条记录！");
+            }
+        })
+
+    });
+    </script>
+{% endblock %}

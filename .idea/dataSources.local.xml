@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - selenium@localhost" uuid="4034ad33-a2bb-4d79-8669-c7add61108d0">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>selenium.*</schema-pattern>
+      <default-schemas>selenium.*</default-schemas>
+    </data-source>
+  </component>
+</project>

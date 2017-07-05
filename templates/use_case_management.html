@@ -1,0 +1,97 @@
+{% extends "index.html" %}
+{% block context %}
+{% load pagination_tags %}
+
+	<div class="right">
+		<div class="center" onclick="show_menu()"></div>
+		<div class="rightbar">
+			<div class="top mt_15">
+            	<ul class="tab-head">
+                	<li class="active">测试用例</li>
+                    <li>业务流用例</li>
+                </ul>
+            </div>
+
+            <ul class="tab-content">
+            	<li style="display:block;">
+                	<div class="btnlist fr">
+                        <a class="a_btn" href="/add/">新增测试用例</a>
+                    </div>
+                    <div class="tablelist mt_15">
+                        <table class="list01 list03 tb">
+					<tr class="thead">
+						<th width="60">ID</th>
+						<th>用例名称</th>
+						<th>案例性质</th>
+						<th>创建时间</th>
+						<th>维护</th>
+                        <th>调试</th>
+					</tr>
+{#                       分页默认显示20条#}
+                        {% autopaginate all_case  %}
+                    {% for i in all_case %}
+                        <form id="form1" name="form1" method="post" action="/modify_case/">
+					<tr >
+						<td>{{ i.id }}</td>
+						<td>{{ i.name }}</td>
+                        <td>{{ i.case_nature }}</td>
+						<td>{{ i.date }}</td>						<td>
+                            <input  type="submit" name={{ i.id }} value="维护用例">
+					    </form>
+                        </td>
+                        <td>
+                        <form id="form1" name="form1" method="post" action="">
+                        <input type="submit" name={{ i.id }} value="用例调试">
+						</form>
+                        </td>
+
+					</tr>
+
+					{% endfor  %}
+
+
+				</table>
+                 {% paginate %}
+                 
+                 <li style="display:none;">
+                 	<div class="btnlist fr">
+                        <a class="a_btn" href="/addbusiness/">新增业务流用例</a>
+                    </div>
+                    <div class="tablelist mt_15">
+                        <table class="list01 list03">
+					<tr class="thead">
+						<th width="60">ID</th>
+						<th>业务流名称</th>
+						<th>创建时间</th>
+						<th>维护</th>
+                        <th>调试</th>
+
+					</tr>
+                        {% autopaginate all_business %}
+                    {% for i in all_business %}
+                        <form id="form1" name="form1" method="post" action="/modify_business/">
+					<tr >
+						<td>{{ i.id }}</td>
+                        <td>{{ i.name }}</td>
+						<td>{{ i.date }}</td>						<td>
+                            <input  type="submit" name={{ i.id }} value="维护业务流">
+					    </form>
+                        </td>
+                        <td>
+                        <form id="form1" name="form1" method="post" action="">
+                        <input type="submit" name={{ i.id }} value="业务流调试">
+						</form>
+                        </td>
+
+					</tr>
+
+					{% endfor  %}
+
+				</table>
+                        {% paginate %}
+
+	</div>
+
+
+{% endblock %}
+

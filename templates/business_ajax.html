@@ -1,0 +1,31 @@
+{% load pagination_tags %}
+{% for i in case_set %}
+<tr>
+    <td>
+        <input type="checkbox" class="checkbox tb" name="checkbox" id="addcass">
+    </td>
+    <td>1</td>
+    <td><input type="text" name="case_name" value='{{ i.name }}' readonly="readonly"></td>
+    <td><input type="text" name="case_date" value='{{ i.date }}' readonly="readonly" ></td>
+    <td><input type="text" name="case_nature" value='{{ i.case_nature }}' readonly="readonly" ></td>
+    <input type="hidden" name="case_id" value="{{ i.id }}">
+    <td><input class="a_btn mdy_case" type="button" name="{{ i.id }}" value='维护用例'></td>
+
+</tr>
+{% endfor %}
+
+{% load staticfiles %}
+<script type="text/javascript" src="{% static "js/jquery-1.10.1.js" %}"></script>
+<script>
+    $(".mdy_case").click(function(){
+        var name = $(this).attr("name");
+        location.href = "/modify_case/?name="+ name
+    })
+
+{#业务流新增用例，排序#}
+    $(function(){
+        var checkbox_list = $(".checkbox")
+        checkbox_list.eq(checkbox_list.length-1).parent().next().text(checkbox_list.length)
+    })
+</script>
+

@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <script>
+{#        步骤拖拽方法#}
+        window.onload = function () {
+            updateTags();
+            //绑定事件
+            var addEvent = document.addEventListener ? function (el, type, callback) {
+                el.addEventListener(type, callback, !1);
+            } : function (el, type, callback) {
+                el.attachEvent("on" + type, callback);
+            }
+            //移除事件
+            var removeEvent = document.removeEventListener ? function (el, type, callback) {
+                el.removeEventListener(type, callback);
+            } : function (el, type, callback) {
+                el.detachEvent("on" + type, callback);
+            }
+            //精确获取样式
+            var getStyle = document.defaultView ? function (el, style) {
+                return document.defaultView.getComputedStyle(el, null).getPropertyValue(style)
+            } : function (el, style) {
+                style = style.replace(/\-(\w)/g, function ($, $1) {
+                    return $1.toUpperCase();
+                });
+                return el.currentStyle[style];
+            }
+            var dragManager = {
+                clientY: 0,
+                draging: function (e) {//mousemove时拖动行
+                    var dragObj = dragManager.dragObj;
+                    if (dragObj) {
+                        e = e || event;
+                        if (window.getSelection) {//w3c
+                            window.getSelection().removeAllRanges();
+                        } else if (document.selection) {
+                            document.selection.empty();//IE
+                        }
+                        var y = e.clientY;
+                        var down = y > dragManager.clientY;//是否向下移动
+                        var tr = document.elementFromPoint(e.clientX, e.clientY);
+                        if (tr && tr.nodeName == "TD") {
+                            tr = tr.parentNode
+                            dragManager.clientY = y;
+                            if (dragObj !== tr) {
+                                tr.parentNode.insertBefore(dragObj, (down ? tr.nextSibling : tr));
+                            }
+                        }
+                        ;
+                    }
+                },
+                dragStart: function (e) {
+                    e = e || event;
+                    var target = e.target || e.srcElement;
+                    if (target.nodeName === "TD") {
+                        target = target.parentNode;
+                        dragManager.dragObj = target;
+                        if (!target.getAttribute("data-background")) {
+                            var background = getStyle(target, "background-color");
+                            target.setAttribute("data-background", background)
+                        }
+                        //显示为可移动的状态
+                        target.style.backgroundColor = "#ccc";
+                        target.style.cursor = "move";
+                        dragManager.clientY = e.clientY;
+                        addEvent(document, "mousemove", dragManager.draging);
+                        addEvent(document, "mouseup", dragManager.dragEnd);
+                    }
+                },
+                dragEnd: function (e) {
+                    var dragObj = dragManager.dragObj
+                    if (dragObj) {
+                        e = e || event;
+                        var target = e.target || e.srcElement;
+                        if (target.nodeName === "TD") {
+                            target = target.parentNode;
+                            dragObj.style.backgroundColor = dragObj.getAttribute("data-background");
+                            dragObj.style.cursor = "default";
+                            dragManager.dragObj = null;
+                            removeEvent(document, "mousemove", dragManager.draging);
+                            removeEvent(document, "mouseup", dragManager.dragEnd);
+                        }
+                    }
+                    updateTags();
+                },
+                main: function (el) {
+                    addEvent(el, "mousedown", dragManager.dragStart);
+                }
+            }
+            var el = document.getElementById("tb");
+            dragManager.main(el);
+            var el1 = document.getElementById("aabb");
+            dragManager.main(el1);
+        }
+        function updateTags() {
+            var ck0 = document.getElementsByName("checkbox");
+            for (var k = 0; k < ck0.length; k++) {
+                var check_td = ck0[k].parentNode;
+                var tag_td = check_td.nextSibling;
+                tag_td.innerHTML = (k + 1);
+            }
+        }
+    </script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>平台首页</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "style/common.css" %}"/>
+
+
+
+</head>
+<body>
+<div class="header clearfix">
+    <ul class="fl clearfix ml_15">
+        <li><img src="{% static "img/logo.png" %}" alt=""/></li>
+        <li class="mrl_15"><img src="{% static "img/headerline.png" %}" alt=""/></li>
+        <li class="fs_24">自动化测试管理平台<span class="fs_16">（v1.0）</span></li>
+    </ul>
+    <ul class="fr clearfix">
+
+        <li class="fs_20 mr_25"><img src="{% static "img/user.png" %}" alt=""
+                                     class="mr_15"/>欢迎你，<span>{% block first_name %}
+            {{ first_name }}{% endblock %}</span></li>
+        <li class="fs_18 prl_25 bl"><img src="{% static "img/logoff.png" %}" alt=""/><a id="logout" href="/" class="ml_15">退出</a>
+
+        </li>
+    </ul>
+
+</div>
+
+
+
+<form id="post_form" method="get" action="add_case">
+    <input id="post_pro_name" type="hidden" name="pro_name">
+</form>
+
+<div class="left">
+    <div class="leftbar">
+        <h2><a href="/index/">首页</a></h2>
+        <h2><a href="http://172.16.200.50/liuzihang/yggdrasil/tree/master/code/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B9%B3%E5%8F%B0%E5%AE%A2%E6%88%B7%E7%AB%AF">相关工具下载</a></h2>
+    </div>
+    {% block project_name %}
+        <div class="leftbar">
+        <h2>项目名称</h2>
+        {% for i in project_name %}
+            <div class="leftnav">
+                <div name="pro_name" class="showmore"><i>&nbsp;&nbsp;</i>{{ i }}</div>
+                <div class="hidden">
+                    <div class="subtitle">
+                        <h3>需求管理</h3>
+                    </div>
+                    <div class="subtitle">
+                         <ul>
+                            <li></li>
+                            <li><a id="namenn" onclick="event.preventDefault()" href="#" >新增测试用例</a></li>
+
+                            <li><a onclick="event.preventDefault()" href="#">维护测试用例</a></li>
+                             <li><a onclick="event.preventDefault()" href="#">维护元素列表</a></li>
+                            <li><a onclick="event.preventDefault()" href="#">新增业务流用例</a></li>
+                            <li><a onclick="event.preventDefault()" href="#">维护业务流用例</a></li>
+                            <li><a onclick="event.preventDefault()" href="#">新增接口测试用例</a></li>
+                            <li><a onclick="event.preventDefault()" href="#">维护接口测试用例</a></li>
+
+{#                             <li><a onclick="event.preventDefault()" href="#">新增过程</a></li>#}
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        {% endfor %}
+    {% endblock %}
+
+    <div class="leftbar">
+        <div class="leftnav">
+            <h2>测试场景管理</h2>
+            <ul>
+                <li><a id="test" href="#">新建场景</a></li>
+                <li><a href="#">维护场景</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="test_perform" name="{{ is_superuser }}" class="leftbar">
+        <div class="leftnav">
+            <h2>测试执行管理</h2>
+            <ul>
+                <li><a href="/add_perform/">新建测试执行</a></li>
+                <li><a href="/perform_list/">维护测试执行</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="leftbar">
+        <div class="leftnav">
+            <h2>测试结果管理</h2>
+            <ul>
+                <li><a href="/report/">结果详情</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="manager" name="{{ is_superuser }}" class="leftbar">
+        <div class="leftnav">
+            <h2>后台管理</h2>
+            <ul>
+                <li><a href="/project_management/">项目管理</a></li>
+                <li><a href="/user_management/">用户管理</a></li>
+                <li><a href="/interfaceParamManager/">接口测试参数配置</a></li>
+                <li><a href="/data_base_manager/">接口测试环境配置</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% block context %}
+    <div class="right">
+
+        <div class="center" onclick="show_menu()"></div>
+        <div class="rightbar">
+            <div class="top"> 管理平台 &gt; <span>我的首页</span></div>
+            <div class="tablelist">
+                <h3>所有项目</h3>
+                <table class="list01">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>项目名称</th>
+                        <th>测试用例数（个）</th>
+                        <th>创建时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>易联平台</td>
+                        <td>590</td>
+                        <td>2014-7-13 09:50:36</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>CRM</td>
+                        <td>450</td>
+                        <td>2014-7-13 09:50:36</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>TPP</td>
+                        <td>300</td>
+                        <td>2014-7-13 09:50:36</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tablelist">
+                <h3>所有测试场景</h3>
+                <table class="list01">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>场景名称</th>
+                        <th>测试用例数（个）</th>
+                        <th>创建时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>场景1-易联平台</td>
+                        <td>100</td>
+                        <td>2014-7-13 09:50:36</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>场景2-易联平台</td>
+                        <td>50</td>
+                        <td>2014-7-13 09:50:36</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tablelist">
+                <h3>所有测试执行</h3>
+                <table class="list01">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>场景名称</th>
+                        <th>场景数（个）</th>
+                        <th>创建时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>执行1-易联平台</td>
+                        <td>1</td>
+                        <td>2014-7-13 09:50:36</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>执行2-易联平台</td>
+                        <td>2</td>
+                        <td>2014-7-13 09:50:36</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+<div class="footer">版权所有 © 上海金鹿金融信息服务有限公司 沪ICP备14004813号-3</div>
+<script type="text/javascript" src="{% static "js/jquery-1.10.1.js" %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.form.js' %}"></script>
+<script type="text/javascript" src="{% static "js/click_func.js" %}"></script>
+
+{#判断用户是否为超级管理员，决定是否显示后台管理和执行管理#}
+<script>
+
+    $(function () {
+        var manager = $("#manager");
+        var test_perform = $("#test_perform");
+        if(test_perform.attr("name") == "False"){
+            test_perform.hide();
+            manager.hide();
+        }
+
+    });
+    /* 点击选项获取项目名称 */
+    var subtitle = $('div.hidden .subtitle ul li');
+    (function ($) {
+        $('div.hidden .subtitle ul li').click(function () {
+            var btn_name = $(this).text();
+            var pro_name = $(this).parents('.hidden').prev('div.showmore').text();
+{#            location.href = "/add_case?pro_name=" + pro_name;#}
+            if (btn_name == "新增测试用例") {
+                location.href = "/case_process?pro_name="+pro_name;
+            }
+            else if (btn_name == "维护测试用例") {
+                location.href = "/case_list?pro_name=" + pro_name;
+            }
+            else if (btn_name == "新增业务流用例") {
+                location.href = "/add_business?pro_name=" + pro_name;
+            }
+            else if (btn_name == "维护业务流用例") {
+                location.href = "/business_list?pro_name=" + pro_name;
+            }
+            else if (btn_name == "新增接口测试用例") {
+               location.href = "/add_inter_case?pro_name="+pro_name;
+            }
+            else if (btn_name == "维护接口测试用例") {
+               location.href = "/modify_inter_case_list?pro_name="+pro_name;
+            }
+            else if (btn_name == "维护元素列表"){
+                location.href = "/add_element?pro_name="+pro_name;
+            }
+
+
+        })
+
+    })(jQuery);
+
+</script>
+
+
+
+
+</body>
+
+</html>
+
+

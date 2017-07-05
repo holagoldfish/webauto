@@ -1,0 +1,112 @@
+2015-02-06 23:21:13,259 admin:INFO 项目已启动：
+2015-02-06 23:21:13,266 admin:INFO --进入首页
+2015-02-06 23:21:15,680 admin:INFO 读取用例列表成功
+2015-02-06 23:21:17,036 admin:INFO 业务流名称为
+2015-02-06 23:21:17,072 admin:INFO 新增业务流成功
+2015-02-06 23:22:59,000 admin:INFO 读取用例列表成功
+2015-02-06 23:23:00,641 admin:INFO 读取用例列表成功
+2015-02-06 23:23:01,917 admin:INFO 业务流名称为
+2015-02-06 23:23:53,627 admin:INFO 读取用例列表成功
+2015-02-06 23:23:54,809 admin:INFO 读取用例列表成功
+2015-02-06 23:24:05,592 admin:INFO 业务流名称为vbbvvb
+2015-02-06 23:24:05,622 admin:INFO 新增业务流成功
+2015-02-06 23:40:09,168 admin:INFO --进入首页
+2015-02-06 23:41:03,482 admin:INFO 连接的客户端ip是:172.16.6.53，当前用例ID是:17
+2015-02-07 00:04:36,130 admin:INFO 读取用例列表成功
+2015-02-07 00:13:16,403 admin:INFO --进入首页
+2015-02-07 00:13:22,454 admin:INFO POST值转换成字典并转换成一个大的列表值为：[(u'ywlname', [u'BF01']), (u'action', [u'\u542f\u52a8\u6d4f\u89c8\u5668', u'\u8f93\u5165', u'\u8f93\u5165', u'\u5355\u51fb', u'\u6807\u51c6\u65ad\u8a00', u'\u542f\u52a8\u6d4f\u89c8\u5668', u'\u8f93\u5165', u'\u542f\u52a8\u6d4f\u89c8\u5668']), (u'desc', [u'111\u6253\u5f00\u6613\u8054\u540e\u53f0', u'111\u8f93\u5165\u7528\u6237\u540d', u'111\u8f93\u5165\u767b\u9646\u5bc6\u7801', u'111\u70b9\u51fb\u767b\u9646', u'111\u65ad\u8a00\u767b\u9646\u662f\u5426\u6210\u529f', u'111asdas', u'111sdfasd', u'222']), (u'30', [u'\u4fdd\u5b58']), (u'method', [u'', u'id', u'id', u'id', u'css selector', u'id', u'id', u'']), (u'value', [u'http://172.16.200.62:8080/neptune/login', u'admin', u'123456', u'', u'admin,\u60a8\u597d!\u9000\u51fa', u'http://www.baidu.com', u'python', u'http://www.163.com']), (u'element', [u'', u'name', u'password', u'submit', u'#btn_bar', u'', u'kw', u''])]
+2015-02-07 00:13:22,454 admin:INFO 遍历列表中的key和values，通过values的值取到key为30
+2015-02-07 00:13:22,461 admin:INFO 当前的用例ID是30，取值成功
+2015-02-07 00:13:22,463 admin:INFO 取当前页面的用例名称，修改数据中的值。值为：BF01
+ase`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+业务流名称为
+2015-02-06 23:23:01,920 [Thread-14:4608] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-06 23:23:01,921 [Thread-14:4608] [django.db.backends:91] [DEBUG]- (0.001) INSERT INTO `webapp_business_flow` (`name`, `date`) VALUES ('', '2015-02-06 15:23:01'); args=[u'', u'2015-02-06 15:23:01']
+2015-02-06 23:23:01,950 [Thread-14:4608] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow` WHERE `webapp_business_flow`.`name` = '' LIMIT 21; args=(u'',)
+2015-02-06 23:23:01,950 [Thread-14:4608] [django.request:231] [ERROR]- Internal Server Error: /addbusiness/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Project\autotest\webapp\views.py", line 171, in add_business
+    business_stp = Business_flow.objects.get(name=business_name)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 361, in get
+    num if num <= MAX_GET_RESULTS else 'more than %s' % MAX_GET_RESULTS
+MultipleObjectsReturned: get() returned more than one Business_flow -- it returned 2!
+2015-02-06 23:23:02,003 [Thread-14:4608] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow` LIMIT 21; args=()
+读取用例列表成功
+2015-02-06 23:23:53,634 [Thread-16:5184] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-06 23:23:53,637 [Thread-16:5184] [django.db.backends:91] [DEBUG]- (0.002) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+读取用例列表成功
+2015-02-06 23:23:54,818 [Thread-24:1900] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-06 23:23:54,819 [Thread-24:1900] [django.db.backends:91] [DEBUG]- (0.002) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+业务流名称为vbbvvb
+2015-02-06 23:24:05,595 [Thread-32:5592] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-06 23:24:05,596 [Thread-32:5592] [django.db.backends:91] [DEBUG]- (0.000) INSERT INTO `webapp_business_flow` (`name`, `date`) VALUES ('vbbvvb', '2015-02-06 15:24:05'); args=[u'vbbvvb', u'2015-02-06 15:24:05']
+2015-02-06 23:24:05,621 [Thread-32:5592] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow` WHERE `webapp_business_flow`.`name` = 'vbbvvb' LIMIT 21; args=(u'vbbvvb',)
+新增业务流成功
+2015-02-06 23:34:10,377 [Thread-33:2608] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-02-06 23:40:08,951 [Thread-37:1612] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-06 23:40:08,953 [Thread-37:1612] [django.db.backends:91] [DEBUG]- (0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'admin' LIMIT 21; args=(u'admin',)
+2015-02-06 23:40:09,111 [Thread-37:1612] [django.db.backends:91] [DEBUG]- (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'jen85wccz1tn2y1xgrytux952uxynbda' AND `django_session`.`expire_date` > '2015-02-06 15:40:09') LIMIT 21; args=('jen85wccz1tn2y1xgrytux952uxynbda', u'2015-02-06 15:40:09')
+2015-02-06 23:40:09,115 [Thread-37:1612] [django.db.backends:91] [DEBUG]- (0.000) UPDATE `auth_user` SET `last_login` = '2015-02-06 15:40:09' WHERE `auth_user`.`id` = 1; args=(u'2015-02-06 15:40:09', 1)
+2015-02-06 23:40:09,148 [Thread-37:1612] [django.db.backends:91] [DEBUG]- (0.001) UPDATE `django_session` SET `session_data` = 'MTgzMWRjNWNmY2U4OWNlMmQxY2YxZDE2ODhiM2MwZDdiZmY2ZDA1OTp7Il9hdXRoX3VzZXJfaGFzaCI6ImRmNDA2YzZhZjQyNWVhZjA1MzQxYjYyZTUyZjViZjk4OTc4MjA2MTciLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9', `expire_date` = '2015-02-20 15:40:09' WHERE `django_session`.`session_key` = 'jen85wccz1tn2y1xgrytux952uxynbda'; args=(u'MTgzMWRjNWNmY2U4OWNlMmQxY2YxZDE2ODhiM2MwZDdiZmY2ZDA1OTp7Il9hdXRoX3VzZXJfaGFzaCI6ImRmNDA2YzZhZjQyNWVhZjA1MzQxYjYyZTUyZjViZjk4OTc4MjA2MTciLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9', u'2015-02-20 15:40:09', 'jen85wccz1tn2y1xgrytux952uxynbda')
+--进入首页
+2015-02-06 23:40:12,571 [Thread-39:5752] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-06 23:40:12,572 [Thread-39:5752] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-06 23:40:12,573 [Thread-39:5752] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 10; args=()
+连接的客户端ip是:172.16.6.53，当前用例ID是:17
+2015-02-06 23:41:03,496 [Thread-40:5992] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-06 23:41:03,497 [Thread-40:5992] [django.db.backends:91] [DEBUG]- (0.001) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-06 23:41:03,500 [Thread-40:5992] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 10; args=()
+2015-02-07 00:03:06,296 [Thread-41:5568] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-07 00:03:06,298 [Thread-41:5568] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_case`; args=()
+2015-02-07 00:03:06,301 [Thread-41:5568] [django.db.backends:91] [DEBUG]- (0.002) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` LIMIT 10; args=()
+2015-02-07 00:03:10,407 [Thread-43:3500] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-07 00:03:10,407 [Thread-43:3500] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow`; args=()
+2015-02-07 00:03:11,799 [Thread-44:3092] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-07 00:03:11,799 [Thread-44:3092] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow` WHERE `webapp_business_flow`.`id` = 30 LIMIT 21; args=(30,)
+2015-02-07 00:03:11,806 [Thread-44:3092] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow_stp`.`id`, `webapp_business_flow_stp`.`desc`, `webapp_business_flow_stp`.`method`, `webapp_business_flow_stp`.`element`, `webapp_business_flow_stp`.`action`, `webapp_business_flow_stp`.`value`, `webapp_business_flow_stp`.`case_name_id` FROM `webapp_business_flow_stp` WHERE `webapp_business_flow_stp`.`case_name_id` = 30; args=(30,)
+2015-02-07 00:03:11,812 [Thread-44:3092] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+读取用例列表成功
+2015-02-07 00:04:36,140 [Thread-45:4536] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-07 00:04:36,142 [Thread-45:4536] [django.db.backends:91] [DEBUG]- (0.003) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+2015-02-07 00:13:16,184 [Thread-49:4312] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-07 00:13:16,187 [Thread-49:4312] [django.db.backends:91] [DEBUG]- (0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`username` = 'admin' LIMIT 21; args=(u'admin',)
+2015-02-07 00:13:16,355 [Thread-49:4312] [django.db.backends:91] [DEBUG]- (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'jen85wccz1tn2y1xgrytux952uxynbda' AND `django_session`.`expire_date` > '2015-02-06 16:13:16') LIMIT 21; args=('jen85wccz1tn2y1xgrytux952uxynbda', u'2015-02-06 16:13:16')
+2015-02-07 00:13:16,358 [Thread-49:4312] [django.db.backends:91] [DEBUG]- (0.001) UPDATE `auth_user` SET `last_login` = '2015-02-06 16:13:16' WHERE `auth_user`.`id` = 1; args=(u'2015-02-06 16:13:16', 1)
+2015-02-07 00:13:16,384 [Thread-49:4312] [django.db.backends:91] [DEBUG]- (0.001) UPDATE `django_session` SET `session_data` = 'ZTI5NjEwM2ZkNzA4YTU0MzgzYWE2MmMyNWJiMWU1OTJiMWM1YzNiNDp7Il9hdXRoX3VzZXJfaGFzaCI6ImRmNDA2YzZhZjQyNWVhZjA1MzQxYjYyZTUyZjViZjk4OTc4MjA2MTciLCJfYXV0aF91c2VyX2lkIjoxLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCJ9', `expire_date` = '2015-02-20 16:13:16' WHERE `django_session`.`session_key` = 'jen85wccz1tn2y1xgrytux952uxynbda'; args=(u'ZTI5NjEwM2ZkNzA4YTU0MzgzYWE2MmMyNWJiMWU1OTJiMWM1YzNiNDp7Il9hdXRoX3VzZXJfaGFzaCI6ImRmNDA2YzZhZjQyNWVhZjA1MzQxYjYyZTUyZjViZjk4OTc4MjA2MTciLCJfYXV0aF91c2VyX2lkIjoxLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCJ9', u'2015-02-20 16:13:16', 'jen85wccz1tn2y1xgrytux952uxynbda')
+--进入首页
+2015-02-07 00:13:19,309 [Thread-51:4588] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-07 00:13:19,311 [Thread-51:4588] [django.db.backends:91] [DEBUG]- (0.002) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow`; args=()
+2015-02-07 00:13:20,471 [Thread-52:5968] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-07 00:13:20,473 [Thread-52:5968] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow` WHERE `webapp_business_flow`.`id` = 30 LIMIT 21; args=(30,)
+2015-02-07 00:13:20,479 [Thread-52:5968] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_business_flow_stp`.`id`, `webapp_business_flow_stp`.`desc`, `webapp_business_flow_stp`.`method`, `webapp_business_flow_stp`.`element`, `webapp_business_flow_stp`.`action`, `webapp_business_flow_stp`.`value`, `webapp_business_flow_stp`.`case_name_id` FROM `webapp_business_flow_stp` WHERE `webapp_business_flow_stp`.`case_name_id` = 30; args=(30,)
+2015-02-07 00:13:20,484 [Thread-52:5968] [django.db.backends:91] [DEBUG]- (0.002) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+POST值转换成字典并转换成一个大的列表值为：[(u'ywlname', [u'BF01']), (u'action', [u'\u542f\u52a8\u6d4f\u89c8\u5668', u'\u8f93\u5165', u'\u8f93\u5165', u'\u5355\u51fb', u'\u6807\u51c6\u65ad\u8a00', u'\u542f\u52a8\u6d4f\u89c8\u5668', u'\u8f93\u5165', u'\u542f\u52a8\u6d4f\u89c8\u5668']), (u'desc', [u'111\u6253\u5f00\u6613\u8054\u540e\u53f0', u'111\u8f93\u5165\u7528\u6237\u540d', u'111\u8f93\u5165\u767b\u9646\u5bc6\u7801', u'111\u70b9\u51fb\u767b\u9646', u'111\u65ad\u8a00\u767b\u9646\u662f\u5426\u6210\u529f', u'111asdas', u'111sdfasd', u'222']), (u'30', [u'\u4fdd\u5b58']), (u'method', [u'', u'id', u'id', u'id', u'css selector', u'id', u'id', u'']), (u'value', [u'http://172.16.200.62:8080/neptune/login', u'admin', u'123456', u'', u'admin,\u60a8\u597d!\u9000\u51fa', u'http://www.baidu.com', u'python', u'http://www.163.com']), (u'element', [u'', u'name', u'password', u'submit', u'#btn_bar', u'', u'kw', u''])]
+遍历列表中的key和values，通过values的值取到key为30
+2015-02-07 00:13:22,460 [Thread-53:2868] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-07 00:13:22,461 [Thread-53:2868] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow` WHERE `webapp_business_flow`.`id` = 30 LIMIT 21; args=(30,)
+当前的用例ID是30，取值成功
+取当前页面的用例名称，修改数据中的值。值为：BF01
+2015-02-07 00:13:22,464 [Thread-53:2868] [django.db.backends:91] [DEBUG]- (0.001) UPDATE `webapp_business_flow` SET `name` = 'BF01', `date` = '2015-02-06 16:13:22' WHERE `webapp_business_flow`.`id` = 30; args=(u'BF01', u'2015-02-06 16:13:22', 30)
+2015-02-07 00:13:22,484 [Thread-53:2868] [django.db.backends:91] [DEBUG]- (0.001) DELETE FROM `webapp_business_flow_stp` WHERE `webapp_business_flow_stp`.`case_name_id` = 30; args=(30,)
+2015-02-07 00:13:22,581 [Thread-53:2868] [django.db.backends:91] [DEBUG]- (0.028) INSERT INTO `webapp_business_flow_stp` (`desc`, `method`, `element`, `action`, `value`, `case_name_id`) VALUES ('111打开易联后台', '', '', '启动浏览器', 'http://172.16.200.62:8080/neptune/login', 30); args=[u'111\u6253\u5f00\u6613\u8054\u540e\u53f0', u'', u'', u'\u542f\u52a8\u6d4f\u89c8\u5668', u'http://172.16.200.62:8080/neptune/login', 30]
+2015-02-07 00:13:22,605 [Thread-53:2868] [django.db.backends:91] [DEBUG]- (0.001) INSERT INTO `webapp_business_flow_stp` (`desc`, `method`, `element`, `action`, `value`, `case_name_id`) VALUES ('111输入用户名', 'id', 'name', '输入', 'admin', 30); args=[u'111\u8f93\u5165\u7528\u6237\u540d', u'id', u'name', u'\u8f93\u5165', u'admin', 30]
+2015-02-07 00:13:22,621 [Thread-53:2868] [django.db.backends:91] [DEBUG]- (0.000) INSERT INTO `webapp_business_flow_stp` (`desc`, `method`, `element`, `action`, `value`, `case_name_id`) VALUES ('111输入登陆密码', 'id', 'password', '输入', '123456', 30); args=[u'111\u8f93\u5165\u767b\u9646\u5bc6\u7801', u'id', u'password', u'\u8f93\u5165', u'123456', 30]
+2015-02-07 00:13:22,632 [Thread-53:2868] [django.db.backends:91] [DEBUG]- (0.001) INSERT INTO `webapp_business_flow_stp` (`desc`, `method`, `element`, `action`, `value`, `case_name_id`) VALUES ('111点击登陆', 'id', 'submit', '单击', '', 30); args=[u'111\u70b9\u51fb\u767b\u9646', u'id', u'submit', u'\u5355\u51fb', u'', 30]
+2015-02-07 00:13:22,657 [Thread-53:2868] [django.db.backends:91] [DEBUG]- (0.001) INSERT INTO `webapp_business_flow_stp` (`desc`, `method`, `element`, `action`, `value`, `case_name_id`) VALUES ('111断言登陆是否成功', 'css selector', '#btn_bar', '标准断言', 'admin,您好!退出', 30); args=[u'111\u65ad\u8a00\u767b\u9646\u662f\u5426\u6210\u529f', u'css selector', u'#btn_bar', u'\u6807\u51c6\u65ad\u8a00', u'admin,\u60a8\u597d!\u9000\u51fa', 30]
+2015-02-07 00:13:22,678 [Thread-53:2868] [django.db.backends:91] [DEBUG]- (0.001) INSERT INTO `webapp_business_flow_stp` (`desc`, `method`, `element`, `action`, `value`, `case_name_id`) VALUES ('111asdas', 'id', '', '启动浏览器', 'http://www.baidu.com', 30); args=[u'111asdas', u'id', u'', u'\u542f\u52a8\u6d4f\u89c8\u5668', u'http://www.baidu.com', 30]
+2015-02-07 00:13:22,697 [Thread-53:2868] [django.db.backends:91] [DEBUG]- (0.001) INSERT INTO `webapp_business_flow_stp` (`desc`, `method`, `element`, `action`, `value`, `case_name_id`) VALUES ('111sdfasd', 'id', 'kw', '输入', 'python', 30); args=[u'111sdfasd', u'id', u'kw', u'\u8f93\u5165', u'python', 30]
+2015-02-07 00:13:22,719 [Thread-53:2868] [django.db.backends:91] [DEBUG]- (0.001) INSERT INTO `webapp_business_flow_stp` (`desc`, `method`, `element`, `action`, `value`, `case_name_id`) VALUES ('222', '', '', '启动浏览器', 'http://www.163.com', 30); args=[u'222', u'', u'', u'\u542f\u52a8\u6d4f\u89c8\u5668', u'http://www.163.com', 30]
+2015-02-07 00:13:50,553 [Thread-54:2620] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-07 00:13:50,555 [Thread-54:2620] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow`; args=()
+2015-02-07 00:13:53,020 [Thread-56:4036] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-07 00:13:53,022 [Thread-56:4036] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow` WHERE `webapp_business_flow`.`id` = 30 LIMIT 21; args=(30,)
+2015-02-07 00:13:53,029 [Thread-56:4036] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow_stp`.`id`, `webapp_business_flow_stp`.`desc`, `webapp_business_flow_stp`.`method`, `webapp_business_flow_stp`.`element`, `webapp_business_flow_stp`.`action`, `webapp_business_flow_stp`.`value`, `webapp_business_flow_stp`.`case_name_id` FROM `webapp_business_flow_stp` WHERE `webapp_business_flow_stp`.`case_name_id` = 30; args=(30,)
+2015-02-07 00:13:53,033 [Thread-56:4036] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()
+2015-02-07 00:17:13,065 [Thread-58:3688] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-07 00:17:13,068 [Thread-58:3688] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow` WHERE `webapp_business_flow`.`id` = 30 LIMIT 21; args=(30,)
+2015-02-07 00:17:13,073 [Thread-58:3688] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_business_flow_stp`.`id`, `webapp_business_flow_stp`.`desc`, `webapp_business_flow_stp`.`method`, `webapp_business_flow_stp`.`element`, `webapp_business_flow_stp`.`action`, `webapp_business_flow_stp`.`value`, `webapp_business_flow_stp`.`case_name_id` FROM `webapp_business_flow_stp` WHERE `webapp_business_flow_stp`.`case_name_id` = 30; args=(30,)
+2015-02-07 00:17:13,079 [Thread-58:3688] [django.db.backends:91] [DEBUG]- (0.002) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case`; args=()

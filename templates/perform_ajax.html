@@ -1,0 +1,11 @@
+{% for perform in perform_list %}
+<tr>
+    <td><input type="checkbox" class="checkbox" id="" name=""></td>
+    <td><input type="text" name="category" value='{{ perform.category }}' readonly="readonly" ></td>
+    <td><input type="text" name="name" value='{{ perform.name }}' readonly="readonly" ></td>
+    <td><input type="text" name="case_nature" value='{{ perform.case_nature }}' readonly="readonly" ></td>
+    <td><input type="text" name="date" value='{{ perform.date }}' readonly="readonly" ></td>
+    <input type="hidden" name="case_id" value="{{ perform.id }}">
+    <td><input class="a_btn" type="button" value="用例维护"  ></td>
+</tr>
+{% endfor %}

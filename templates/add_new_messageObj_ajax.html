@@ -1,0 +1,36 @@
+<tr>
+    <td><input type='checkbox' class='checkbox' id='' name='checkbox'></td>
+    <td>
+        <select name='key1' id='mkey1' class='key1Type'>
+            <option>datagramHeader</option>
+            <option>datagramBody</option>
+            <option>messageCode</option>
+            <option>targetSystemCode</option>
+        </select>
+    </td>
+    <td>
+        <select name='listname' id='mkey2' class='key2Type'>
+        </select>
+    </td>
+    <td>
+        <select name='listkey' id='mkey2' class='key3Type'>
+        </select>
+    </td>
+    <td><input type='text' name='value' value=''/>
+    </td>
+</tr>
+{##}
+{#    <script>#}
+{#    (function ($) {#}
+{#    /* 当项目变化时加载项目元素 */#}
+{#        $("#mkey1").change(function(event){#}
+{#            event.preventDefault();#}
+{#            var mk1 = $("#mkey1").find("option:selected").text();#}
+{#            alert(mk1);#}
+{#            $.post("/search_ajax/",{proName: proName},function(result){#}
+{#                $(".list02").append(result)#}
+{#            });#}
+{#        });#}
+{#     })(jQuery);#}
+{#    </script>#}
+

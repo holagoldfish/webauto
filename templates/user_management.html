@@ -1,0 +1,154 @@
+{% extends "index.html" %}
+{% load pagination_tags %}
+{% block context %}
+    <!DOCTYPE HTML>
+    <div class="right">
+        <div class="center" onclick="show_menu()"></div>
+        <div class="rightbar">
+            <div class="top"> 管理平台 &gt; <span>用户管理</span></div>
+
+            <div class="btnlist re_position">
+                <a id="btn_add_user" class="a_btn adduser_btn">新增用户</a>
+                <a id='btn_modify' class="a_btn mrl_15 resetpwd" href="#">重置密码</a>
+            </div>
+
+            <div class="tablelist">
+                <table class="list01 list03 usertable">
+                    <tr class="thead">
+                        <th width="60"></th>
+                        <th width="85">ID</th>
+                        <th>用户名</th>
+                        <th>真实姓名</th>
+                        <th>加入时间</th>
+                        <th>最后登录时间</th>
+                        <th>是否会超级用户</th>
+                        <th>登录权限</th>
+                        <th>是否有效</th>
+                    </tr>
+                    {% autopaginate user 10 %}
+                    {% for user in user %}
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="checkbox" id="" name="">
+                            </td>
+                            <td>{{ user.id }}</td>
+                            <td class="username">{{ user.username }}</td>
+                            <td class="name">{{ user.first_name }}</td>
+                            <td>{{ user.last_login }}</td>
+                            <td>{{ user.date_joined }}</td>
+                            <td>{{ user.is_superuser }}</td>
+                            <td>{{ user.is_staff }}</td>
+                            <td>{{ user.is_active }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% paginate %}
+        </div>
+    </div>
+
+    <div class="mask"></div>
+    <div class="dialog user_dialog">
+        <table class="list01 list02 list04">
+            <tr>
+                <td>用户名</td>
+                <td><input id="add_user" type="text" value=""></td>
+            </tr>
+            <tr>
+                <td>真实姓名</td>
+                <td><input id="first_name" type="text" value=""></td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input id="password" type="password" value=""></td>
+            </tr>
+            <tr>
+                <td>用户状态</td>
+                <td>
+                    <span><input type="radio" name="radiobutton" value="1" checked>启用</span>
+                    <span><input type="radio" name="radiobutton" value="0">禁用</span>
+                </td>
+            </tr>
+        </table>
+        <div class="textcenter"><input id="save" type="submit" class="a_btn addcase_save alertinfo" value="保存"/><a
+                class="a_btn cancel ml_50" href="#">取消</a></div>
+    </div>
+    <div class="dialog changepwd_dialog">
+        <form action="" class="user">
+            用户名：<input id="modify_user" type="text" readonly="readonly"/>
+        </form>
+        {#        <form action="">#}
+        {#            原密码：<input type="password"/>#}
+        {#        </form>#}
+        <form action="" class="mb_50">
+            新密码：<input id="new_passwd" type="password">
+
+        </form>
+
+        <div class="textcenter"><input id="modify_password" type="submit" class="a_btn" value="提交"/><a
+                class="a_btn cancel ml_50" href="#">取消</a></div>
+
+    </div>
+
+    <script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+    <script type="text/javascript" src="js/click_func.js"></script>
+
+    </body>
+    </html>
+
+
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static "js/jquery-1.10.1.js" %}"></script>
+
+    {#    新增用户#}
+    <script>
+        $("#save").click(function () {
+            var add_user = $("#add_user").val();
+            var first_name = $("#first_name").val();
+            var password = $("#password").val();
+            var chest = '';
+            var btn_add = $("#btn_add_user").text();
+            var status = document.getElementsByName("radiobutton");
+            for (i = 0; i < status.length; i++) {
+                if (status[i].checked == true) {
+                    chest += status[i].value
+                }
+            }
+            $.post("", {
+                add_user: add_user,
+                first_name: first_name,
+                password: password,
+                chest: chest,
+                btn_add: btn_add
+            }, function (add_user, first_name, password, chest, btn_add) {
+                return (add_user, first_name, password, chest, btn_add)
+            })
+            alert("保存成功");
+            location.reload();
+        })
+    </script>
+    {#重置密码#}
+    <form id="set_pass" method="POST">
+        <input id="user"    type="hidden" name="user" value="">
+        <input id="passwd"  type="hidden" name="passwd" value="">
+        <input id="btn_add" type="hidden" name="btn_add" value="">
+    </form>
+
+
+
+    <script>
+        $("#modify_password").click(function () {
+            var btn_add = $("#btn_modify").text()
+            var user = $("#modify_user").val();
+            var pw = $("#new_passwd").val();
+            $(".changepwd_dialog").hide();
+            $(".mask").hide();
+            $("#user").val(user);
+            $("#passwd").val(pw);
+            $("#btn_add").val(btn_add);
+            $("#set_pass").submit();
+        })
+    </script>
+
+
+{% endblock %}

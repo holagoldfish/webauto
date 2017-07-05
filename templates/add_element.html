@@ -1,0 +1,295 @@
+{% extends "index.html" %}
+{% load pagination_tags %}
+{% block context %}
+
+        <div class="right">
+            <div class="center" onclick="show_menu()"></div>
+            <div class="rightbar">
+                <div class="top"> 管理平台 &gt; <span id="current_pro_name">{{ current_pro_name }}</span>
+                    <span>&gt元素列表</span></div>
+                <div class="btnlist re_position">
+
+                    <form id="search_form" method="get">
+                        <a class="a_btn addele">添加元素</a>
+                    <a class="a_btn mdyele">修改元素</a>
+                    <a class="a_btn delele">删除元素</a>
+                        <span>ID:</span>
+                        <input type="text" name="sec_id" value="">
+                        <span>名称</span>
+                        <input type="text" name="sec_name" value="">
+                        <span>页面路径</span>
+                        <input type="text" name="sec_url" value="">
+                        <span>元素值</span>
+                        <input type="text" name="sec_val" value="">
+                        <input type="hidden" name="pro_name" value="{{ current_pro_name }}">
+                        <input type="hidden" name="tag" value="查询">
+                        <input type="submit" class="a_btn" id="serach"  value="查询">
+                    </form>
+                </div>
+
+
+                <div class="tablelist">
+                    <table class="list01 list02" id="tb">
+                        <tr class="thead">
+                            <th width="45"></th>
+                            <th>元素ID</th>
+                            <th>名称</th>
+                            <th width="100">定位方法</th>
+                            <th>元素值</th>
+                            <th>页面路径</th>
+                            <th>备注</th>
+                        </tr>
+                    {% autopaginate element_list 20 %}
+                        {% for ele in element_list %}
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="checkbox" value="{{ ele.id }}">
+                            </td>
+                            <td>
+                                <a>{{ ele.id }}</a>
+                            </td>
+                            <td>
+                                <a>{{ ele.name }}</a>
+                            </td>
+
+                            <td>
+                                <a>{{ ele.fun }}</a>
+                            </td>
+                            <td>
+                                <a>{{ ele.values }}</a>
+                            </td>
+                            <td>
+                                <a>{{ ele.page_url }}</a>
+                            </td>
+                            <td>
+                                <a>{{ ele.desc }}</a>
+                            </td>
+
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% paginate %}
+                </div>
+            </div>
+        </div>
+
+    <div id="mask" class="mask"></div>
+
+    <div class="dialog test_cases" id="test_cases01" style="height: 200px;width: 1200px">
+        <div>
+        <h1 style="font-size: 22px;margin-left: 500px">添加元素</h1>
+        </div>
+        <div style="margin-top: 20px">
+            <table class="list01 list02" style="margin-top: 10px">
+                <tr class="thead">
+                    <th>名称</th>
+                    <th>定位方法</th>
+                    <th>元素值</th>
+                    <th>页面路径</th>
+                    <th>备注</th>
+                </tr>
+                <form id="tj_form" method="post">
+                    <tr>
+                        <td>
+                            <input name="name" type="text" autocomplete="off" required autofocus >
+                        </td>
+
+                        <td>
+                            <select name="function" autocomplete="off" required autofocus >
+                                <option></option>
+                                {% for i in fun %}
+                                    <option value="{{ i.name }}">{{ i.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                        <td>
+                            <input name="value" type="text" autocomplete="off" required autofocus >
+                        </td>
+                        <td><input name="page_url" type="text" autocomplete="off" required autofocus >
+                        </td>
+                        <td>
+                            <input name="desc" type="text" autocomplete="off" required autofocus >
+                        </td>
+                    </tr>
+                    <input type="hidden" name="pro_name" value="{{ current_pro_name }}">
+                    <input type="hidden" name="btn_name" value="添加元素">
+                </form>
+
+            </table>
+            <div style="margin-top: 10px;margin-left: 400px">
+                <input id="add_sure" type="button" class="a_btn" value="保存">
+                <input id="cancel" type="button" style="margin-left: 5px" class="a_btn cancel" value="取消">
+            </div>
+        </div>
+    </div>
+
+    <div class="dialog test_cases" id="test_cases02" style="height: 200px;width: 1200px">
+        <div>
+        <h1 style="font-size: 22px;margin-left: 500px">修改元素</h1>
+        </div>
+        <div style="margin-top: 20px">
+            <table class="list01 list02"  style="margin-top: 10px">
+                <tr class="thead">
+                    <th style="width: 50px">元素ID</th>
+                    <th>名称</th>
+                    <th style="width: 120px">定位方法</th>
+                    <th>元素值</th>
+                    <th>页面路径</th>
+                    <th>备注</th>
+                </tr>
+                <form id="mdy_form" method="post">
+                    <tr id="mdf_ele">
+                        <td>
+                            <input type="text" name="ele_id" readonly="readonly">
+                        </td>
+                        <td>
+                            <input name="name" type="text" autocomplete="off" value="" required autofocus >
+                        </td>
+
+                        <td>
+                            <select name="function" autocomplete="off"  required autofocus >
+                                <option></option>
+                                {% for i in fun %}
+                                    <option value="{{ i.name }}">{{ i.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                        <td>
+                            <input name="value" type="text" autocomplete="off" required autofocus >
+                        </td>
+                        <td><input name="page_url" type="text" autocomplete="off" required autofocus >
+                        </td>
+                        <td>
+                            <input name="desc" type="text" autocomplete="off" required autofocus >
+                        </td>
+                    </tr>
+                    <input type="hidden" name="pro_name" value="{{ current_pro_name }}">
+                    <input type="hidden" name="btn_name" value="修改元素">
+                </form>
+
+            </table>
+            <div style="margin-top: 10px;margin-left: 400px">
+                <input id="mdy_sure" type="button" class="a_btn" value="保存">
+                <input type="button" style="margin-left: 5px" class="a_btn cancel" value="取消">
+            </div>
+        </div>
+    </div>
+
+
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static "js/jquery-1.10.1.js" %}"></script>
+
+
+{# 取消按钮#}
+    <script>
+        $(".cancel").click(function () {
+            $("#test_cases01").hide();
+            $(".mask").hide();
+        })
+    </script>
+
+{#根据当前页面与滚动条位置，设置提示对话框的Top与Left#}
+    <script>
+    function showDialog() {
+        var objW = $(window); //当前窗口
+        var objC = $(".dialog"); //对话框
+        var brsW = objW.width();
+        var brsH = objW.height();
+        var sclL = objW.scrollLeft();
+        var sclT = objW.scrollTop();
+        var curW = objC.width();
+        var curH = objC.height();
+        //计算对话框居中时的左边距
+        var left = sclL + (brsW - curW) / 2;
+        //计算对话框居中时的上边距
+        var top = sclT + (brsH - curH) / 2;
+        //设置对话框在页面中的位置
+        objC.css({"left": left, "top": top});
+    }
+    </script>
+
+{#添加元素按钮#}
+    <script>
+        $(".addele").click(function(){
+            $(".mask").show();
+            showDialog();
+            $("#test_cases01").show();
+        })
+    </script>
+{#删除元素#}
+    <script>
+        $(".delele").click(function () {
+            var checl_list = $(".checkbox");
+            var check_id = [];
+            var pro_name = $("#current_pro_name").text();
+
+            for (i = 0; i < checl_list.length; i++) {
+                if (checl_list[i].checked == true) {
+                    check_id.push(checl_list[i].value)
+                    checl_list.eq(i).parent().parent().remove()
+                }
+            }
+            $.post("/add_element/?pro_name="+pro_name,{check_id:check_id,btn_name:"删除元素"})
+        })
+    </script>
+
+{#添加保存按钮#}
+    <script>
+        $("#add_sure").click(function () {
+            $("#tj_form").submit();
+        })
+    </script>
+
+{#修改保存按钮#}
+<script>
+    $("#mdy_sure").click(function () {
+        $("#mdy_form").submit();
+    })
+</script>
+
+
+{#修改元素#}
+    <script>
+        $(".mdyele").click(function(){
+            check_list = $(".checkbox");
+            check_len =[];
+            for(i =0;i<check_list.length;i++){
+                if (check_list[i].checked==true){
+                    check_len.push(i)
+                }
+            }
+            if(check_len.length!=1){
+                alert("只能选择一个哦，亲")
+            }
+            else{
+                td_list_id = $(".checkbox").eq(check_len).parent().siblings().eq(0).children().text();
+                td_list_name = $(".checkbox").eq(check_len).parent().siblings().eq(1).children().text();
+                td_list_fun = $(".checkbox").eq(check_len).parent().siblings().eq(2).children().text();
+                td_list_val = $(".checkbox").eq(check_len).parent().siblings().eq(3).children().text();
+                td_list_url = $(".checkbox").eq(check_len).parent().siblings().eq(4).children().text();
+                td_list_desc = $(".checkbox").eq(check_len).parent().siblings().eq(5).children().text();
+
+                td_id = $("#mdf_ele").children().eq(0).children();
+                td_name = $("#mdf_ele").children().eq(1).children();
+                td_fun = $("#mdf_ele").children().eq(2).children();
+                td_val = $("#mdf_ele").children().eq(3).children();
+                td_url = $("#mdf_ele").children().eq(4).children();
+                td_desc = $("#mdf_ele").children().eq(5).children();
+
+                td_id.val(td_list_id);
+                td_name.val(td_list_name);
+                td_fun.val(td_list_fun);
+                td_val.val(td_list_val);
+                td_url.val(td_list_url);
+                td_desc.val(td_list_desc);
+
+                $(".mask").show();
+                showDialog();
+                $("#test_cases02").show();
+            }
+
+        })
+    </script>
+{% endblock %}
+
+

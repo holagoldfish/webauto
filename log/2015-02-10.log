@@ -1,0 +1,64 @@
+2015-02-10 23:58:33,127 admin:INFO 项目已启动：
+2015-02-10 23:58:33,138 admin:INFO POST方法，接受modify传过来的按钮名称转换成测试用例ID，通过ID查找到该测试用例的所有步骤，并加载到模版中循环显示在页面上
+G]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` WHERE `webapp_test_case`.`id` = 3 LIMIT 21; args=(3,)
+POST方法，接受modify传过来的按钮名称转换成测试用例ID，通过ID查找到该测试用例的所有步骤，并加载到模版中循环显示在页面上
+2015-02-10 23:58:33,157 [Thread-2:5976] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` WHERE `webapp_test_step`.`case_name_id` = 3; args=(3,)
+2015-02-10 23:59:26,971 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.000) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-10 23:59:26,973 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_case`.`id`, `webapp_test_case`.`name`, `webapp_test_case`.`desc`, `webapp_test_case`.`run_mode`, `webapp_test_case`.`note`, `webapp_test_case`.`data`, `webapp_test_case`.`case_nature`, `webapp_test_case`.`url`, `webapp_test_case`.`funtion_id_id` FROM `webapp_test_case` WHERE `webapp_test_case`.`id` = 3 LIMIT 21; args=(3,)
+2015-02-10 23:59:26,974 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.000) UPDATE `webapp_test_case` SET `name` = 'FT_登录', `desc` = '', `run_mode` = '', `note` = '', `data` = '2015-02-10 15:59:26', `case_nature` = '正案例', `url` = '', `funtion_id_id` = NULL WHERE `webapp_test_case`.`id` = 3; args=(u'FT_\u767b\u5f55', u'', u'', u'', u'2015-02-10 15:59:26', u'\u6b63\u6848\u4f8b', u'', 3)
+2015-02-10 23:59:27,009 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.000) SELECT COUNT(*) FROM `webapp_test_step` WHERE `webapp_test_step`.`case_name_id` = 3; args=(3,)
+2015-02-10 23:59:27,012 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` WHERE `webapp_test_step`.`case_name_id` = 3; args=(3,)
+2015-02-10 23:59:27,013 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` WHERE `webapp_test_step`.`id` = 258 LIMIT 21; args=(258,)
+2015-02-10 23:59:27,015 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.001) UPDATE `webapp_test_step` SET `desc` = '打开浏览器1', `method` = 'name', `element` = '11', `action` = '启动浏览器', `value` = '11http://172.16.200.61:8081/uc-cas/login?service=http%3A%2F%2F172.16.200.60%3A8080%2Ffortune%2Fj_spring_cas_security_check', `case_name_id` = 3 WHERE `webapp_test_step`.`id` = 258; args=(u'\u6253\u5f00\u6d4f\u89c8\u56681', u'name', u'11', u'\u542f\u52a8\u6d4f\u89c8\u5668', u'11http://172.16.200.61:8081/uc-cas/login?service=http%3A%2F%2F172.16.200.60%3A8080%2Ffortune%2Fj_spring_cas_security_check', 3, 258)
+2015-02-10 23:59:27,032 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` WHERE `webapp_test_step`.`id` = 259 LIMIT 21; args=(259,)
+2015-02-10 23:59:27,035 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.000) UPDATE `webapp_test_step` SET `desc` = '输入登录名', `method` = 'id', `element` = 'username22', `action` = '输入', `value` = '22admin', `case_name_id` = 3 WHERE `webapp_test_step`.`id` = 259; args=(u'\u8f93\u5165\u767b\u5f55\u540d', u'id', u'username22', u'\u8f93\u5165', u'22admin', 3, 259)
+2015-02-10 23:59:27,066 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.000) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` WHERE `webapp_test_step`.`id` = 260 LIMIT 21; args=(260,)
+2015-02-10 23:59:27,069 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.001) UPDATE `webapp_test_step` SET `desc` = '输入密码', `method` = 'id', `element` = '33password', `action` = '输入', `value` = '33123456', `case_name_id` = 3 WHERE `webapp_test_step`.`id` = 260; args=(u'\u8f93\u5165\u5bc6\u7801', u'id', u'33password', u'\u8f93\u5165', u'33123456', 3, 260)
+2015-02-10 23:59:27,089 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` WHERE `webapp_test_step`.`id` = 261 LIMIT 21; args=(261,)
+2015-02-10 23:59:27,092 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.001) UPDATE `webapp_test_step` SET `desc` = '点击登录按钮', `method` = 'class name', `element` = '44btn', `action` = '单击', `value` = '444', `case_name_id` = 3 WHERE `webapp_test_step`.`id` = 261; args=(u'\u70b9\u51fb\u767b\u5f55\u6309\u94ae', u'class name', u'44btn', u'\u5355\u51fb', u'444', 3, 261)
+2015-02-10 23:59:27,112 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.001) INSERT INTO `webapp_test_step` (`desc`, `method`, `element`, `action`, `value`, `case_name_id`) VALUES ('55', 'id', '55', '输入', '55', NULL); args=[u'55', u'id', u'55', u'\u8f93\u5165', u'55', None]
+2015-02-10 23:59:27,114 [Thread-3:4980] [django.request:231] [ERROR]- Internal Server Error: /modify_case/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Project\autotest\webapp\views.py", line 135, in modify_case
+    value = req.POST.getlist("value")[i])
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 372, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 589, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 617, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 698, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 731, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 921, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 920, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\utils.py", line 81, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 134, in execute
+    six.reraise(utils.IntegrityError, utils.IntegrityError(*tuple(e.args)), sys.exc_info()[2])
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 129, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python27\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+IntegrityError: (1048, "Column 'case_name_id' cannot be null")
+2015-02-10 23:59:27,190 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` LIMIT 21; args=()
+2015-02-10 23:59:27,196 [Thread-3:4980] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` LIMIT 21; args=()
+2015-02-11 00:25:24,048 [MainThread:2192] [django.db.backends:91] [DEBUG]- (0.003) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` WHERE `webapp_test_step`.`id` = 5 LIMIT 21; args=(5,)
+2015-02-11 00:25:36,206 [MainThread:2192] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` WHERE `webapp_test_step`.`id` = 55 LIMIT 21; args=(55,)
+2015-02-11 00:25:43,779 [MainThread:2192] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` WHERE `webapp_test_step`.`id` = 289 LIMIT 21; args=(289,)
+2015-02-11 00:25:48,401 [MainThread:2192] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` WHERE `webapp_test_step`.`id` = 289 LIMIT 21; args=(289,)
+2015-02-11 00:26:15,565 [MainThread:2192] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_test_step`.`id`, `webapp_test_step`.`desc`, `webapp_test_step`.`method`, `webapp_test_step`.`element`, `webapp_test_step`.`action`, `webapp_test_step`.`value`, `webapp_test_step`.`case_name_id` FROM `webapp_test_step` WHERE `webapp_test_step`.`id` = 292 LIMIT 21; args=(292,)
+2015-02-11 00:26:22,095 [MainThread:2192] [django.db.backends:91] [DEBUG]- (0.001) DELETE FROM `webapp_test_step` WHERE `webapp_test_step`.`id` IN (292); args=(292,)

@@ -1,0 +1,230 @@
+{% extends "index.html" %}
+{% load pagination_tags %}
+{% block context %}
+    {% load staticfiles %}
+    <div class="right">
+        <div class="center" onclick="show_menu()"></div>
+        <div class="rightbar">
+            <div class="top"> 管理平台 &gt; <span>项目管理</span></div>
+
+            <div class="btnlist re_position">
+                <a id="add_pro_btn" class="a_btn add_pro">新增项目</a>
+                <a id="modify_pro_btn" class="a_btn change_pro" style="margin: 0 15px;" href="#">编辑项目</a>
+                <a class="a_btn delete_case1" style="margin: 0 15px;" href="#">删除项目</a>
+            </div>
+            <div class="tablelist">
+                <table class="list01 list02 usertable">
+                    <tr class="thead">
+                        <th width="60"></th>
+                        <th width="85">项目ID</th>
+                        <th>项目名称</th>
+                        <th>项目地址</th>
+                        <th>创建时间</th>
+                        <th>项目人员</th>
+                        <th>项目状态</th>
+                    </tr>
+                    {% autopaginate project_list 10 %}
+                    {% for project in project_list %}
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="checkbox" id="" name="">
+                            </td>
+
+                            <td class="proid" id="pro_id">{{ project.id }}</td>
+                            <td class="proname">{{ project.name }}</td>
+                            <td class="prourl">{{ project.url }}</td>
+                            <td>{{ project.create_time }}</td>
+                            <td class="member">{{ project.pro_user }}</td>
+                            <td class="prostatus">{{ project.pro_status }}</td>
+                        </tr>
+                    {% endfor %}
+
+                </table>
+
+            </div>
+            {% paginate %}
+        </div>
+    </div>
+
+    <div class="mask"></div>
+    {#    增加项目#}
+    <div class="dialog pro_dialog">
+        <table class="list01 list02 list04">
+            <tr>
+                <td width="155">项目名称</td>
+                <td><input id="add_pro" name="add" type="text" required autofocus></td>
+            </tr>
+            <tr>
+                <td width="155">项目地址</td>
+                <td><input id="add_url" name="url" type="text" required autofocus></td>
+            </tr>
+            <tr>
+                <td><span>项目人员</span><a class="a_btn addmember" href="#">添加成员</a></td>
+                <td id='add_cy' class="memberlist"></td>
+            </tr>
+            <tr>
+                <td>项目状态</td>
+                <td>
+                    <select name="" id="status">
+                        <option value="进行中">进行中</option>
+                        <option value="已关闭">已关闭</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <div class="textcenter">
+            <input id="save_pro" onclick="return save_pro()" type="submit" class="a_btn addcase_save alertinfo" value="保存项目信息"/>
+            <a class="a_btn cancel ml_50 cencel_pr" href="#">取消</a></div>
+    </div>
+
+    <div class="dialog moremember_dialog">
+        <div class="clearfix">
+            <img src="{% static "img/close.png" %}" alt=""
+                 style="width:18px; height:18px; margin: -9px 7px 10px 0px; cursor:pointer;" class="fr member_cancel"/>
+        </div>
+        <div style="height: 280px; overflow-y: auto; margin-bottom: 15px;">
+            <table class="list01 list02 list04">
+                <tr>
+                    <th width="100"></th>
+                    <td>人员名称</td>
+
+                </tr>
+                {% for i in user_list %}
+                    <tr>
+                        <td><input type="checkbox" class="checkbox2" id="" name="" value="{{ i.username }}"></td>
+                        <td class="user">{{ i.username }}</td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+        <div class="textcenter"><input type="submit" class="a_btn member_save" value="保存人员信息"/><a
+                class="a_btn member_cancel ml_50" href="#">取消</a></div>
+    </div>
+    {#    修改项目#}
+    <div class="dialog changepro_dialog">
+        <table class="list01 list02 list04">
+            <tr>
+                <td width="155">项目ID</td>
+                <td class="idnum"><input id="project_id" type="text" readonly="readonly" value=""></td>
+            </tr>
+            <tr>
+                <td width="155">项目地址</td>
+                <td class="resetprourl"><input id="mdy_url" name="url" type="text" required autofocus></td>
+            </tr>
+
+            <tr>
+                <td width="155">项目名称</td>
+                <td class="resetproname"><input id="modify_pro" type="text" value=""></td>
+            </tr>
+            <tr>
+                <td><span>项目人员</span><a class="a_btn addmember" href="#">修改成员</a></td>
+                <td id="modiy_ry" class="memberlist"></td>
+            </tr>
+            <tr>
+                <td>项目状态</td>
+                <td>
+                    <span><input type="radio" name="radiobutton" value="进行中">进行中</span>
+                    <span><input type="radio" name="radiobutton" value="已关闭">已关闭</span>
+                </td>
+            </tr>
+        </table>
+        <div class="textcenter"><input id="save_modify" type="submit" class="a_btn addcase_save alertinfo"
+                                       value="保存修改"/><a
+                class="a_btn cancel ml_50 cencel_pr" href="#">取消</a></div>
+    </div>
+
+
+
+
+
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static "js/jquery-1.10.1.js" %}"></script>
+
+
+    {#    新增项目的JS代码#}
+    <script>
+        $("#save_pro").click(function () {
+            var btn_name = $("#add_pro_btn").text()
+            var pro_name = $("#add_pro").val();
+            var user_name = $("#add_cy").text();
+            var url = $("#add_url").val();
+            {#        下面2行是获取下拉列表的值#}
+            var obj = document.getElementById('status');
+            var select_val = obj.options[obj.selectedIndex].text;//获取文本
+            if (user_name == "" || user_name == null) {
+                alert("请至少添加一名成员")
+            }
+            else {
+                $.post("", {
+                    pro_name: pro_name,
+                    user_name: user_name,
+                    select_val: select_val,
+                    btn_name: btn_name,
+                    url : url
+                }, function (pro_name, user_name) {
+                    return (pro_name, user_name, select_val, btn_name,url);
+                })
+
+            }
+            alert("保存成功");
+            window.location.reload();
+
+        });
+    </script>
+
+
+    {#    编辑项目的JS代码#}
+    <script>
+        $("#save_modify").click(function () {
+            var btn_name = $("#modify_pro_btn").text();
+            var pro_name = $("#modify_pro").val();
+            var user_name = $("#modiy_ry").text();
+            var url = $("#mdy_url").val();
+            var check_box = document.getElementsByName("radiobutton")
+            var chest = '';
+            var pro_id = $("#project_id").attr("value");
+            for (i = 0; i < check_box.length; i++) {
+                if (check_box[i].checked == true) {
+                    chest += check_box[i].value
+                }
+            }
+            $.post("", {
+                btn_name: btn_name,
+                pro_name: pro_name,
+                user_name: user_name,
+                chest: chest,
+                pro_id: pro_id,
+                url : url
+            }, function (btn_name, pro_name, user_name, chest, pro_id,url) {
+                return (btn_name, pro_name, user_name, chest, pro_id,url)
+
+            })
+            alert("修改成功");
+            window.location.reload();
+        })
+
+    </script>
+
+    <script>
+        $(".delete_case1").click(function(){
+            var btn_name = $(this).text();
+            var pro_id = ""
+            var ch_box  = $(".checkbox");
+            for(i=0;i<ch_box.length;i++){
+                if(ch_box[i].checked == true){
+                    pro_text = $(".checkbox").eq(i).parent().parent().find("[class='proid']").text()
+                    pro_id=+pro_text
+                    $(".checkbox").eq(i).parent().parent().remove();
+                }
+            }
+            $.post("",{pro_id:pro_id,btn_name:btn_name},function(pro_id,btn_name){
+                return (pro_id,btn_name)
+            })
+            window.location.reload()
+        })
+    </script>
+{% endblock %}
+
+
+

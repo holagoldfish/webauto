@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - selenium@localhost" uuid="4034ad33-a2bb-4d79-8669-c7add61108d0">
+    <database-info product="MySQL" version="5.6.21-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="selenium"/>
+    <table name="auth_group" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="80" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="auth_group_permissions_group_id_58c48ba9_fk_auth_group_id" table="auth_group_permissions" schema="" catalog="selenium" columns="group_id"/>
+      <exported-key name="auth_user_groups_group_id_30a071c9_fk_auth_group_id" table="auth_user_groups" schema="" catalog="selenium" columns="group_id"/>
+      <index name="name" unique="true" columns="name"/>
+    </table>
+    <table name="auth_group_permissions" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="group_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="permission_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="auth_group_permissi_permission_id_23962d04_fk_auth_permission_id" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="auth_group_permissions_group_id_58c48ba9_fk_auth_group_id" columns="group_id" ref-table="auth_group" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="group_id" unique="true" columns="permission_id"/>
+      <index name="auth_group_permissions_0e939a4f" unique="false" columns="group_id"/>
+      <index name="auth_group_permissions_8373b171" unique="false" columns="permission_id"/>
+    </table>
+    <table name="auth_permission" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="content_type_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="codename" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="auth_permissi_content_type_id_51277a81_fk_django_content_type_id" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="auth_group_permissi_permission_id_23962d04_fk_auth_permission_id" table="auth_group_permissions" schema="" catalog="selenium" columns="permission_id"/>
+      <exported-key name="auth_user_user_perm_permission_id_3d7071f0_fk_auth_permission_id" table="auth_user_user_permissions" schema="" catalog="selenium" columns="permission_id"/>
+      <index name="content_type_id" unique="true" columns="codename"/>
+      <index name="auth_permission_417f1b1c" unique="false" columns="content_type_id"/>
+    </table>
+    <table name="auth_user" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="password" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_login" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="is_superuser" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="username" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="75" scale="0" nullable="false" jdbcType="12"/>
+      <column name="is_staff" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="is_active" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="date_joined" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="auth_user_groups_user_id_24702650_fk_auth_user_id" table="auth_user_groups" schema="" catalog="selenium" columns="user_id"/>
+      <exported-key name="auth_user_user_permissions_user_id_7cd7acb6_fk_auth_user_id" table="auth_user_user_permissions" schema="" catalog="selenium" columns="user_id"/>
+      <exported-key name="django_admin_log_user_id_1c5f563_fk_auth_user_id" table="django_admin_log" schema="" catalog="selenium" columns="user_id"/>
+      <exported-key name="webapp_perform_case_user_id_68369b68_fk_auth_user_id" table="webapp_perform_case" schema="" catalog="selenium" columns="user_id"/>
+      <index name="username" unique="true" columns="username"/>
+    </table>
+    <table name="auth_user_groups" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="group_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="auth_user_groups_group_id_30a071c9_fk_auth_group_id" columns="group_id" ref-table="auth_group" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="auth_user_groups_user_id_24702650_fk_auth_user_id" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="user_id" unique="true" columns="group_id"/>
+      <index name="auth_user_groups_0e939a4f" unique="false" columns="group_id"/>
+      <index name="auth_user_groups_e8701ad4" unique="false" columns="user_id"/>
+    </table>
+    <table name="auth_user_user_permissions" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="permission_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="auth_user_user_perm_permission_id_3d7071f0_fk_auth_permission_id" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="auth_user_user_permissions_user_id_7cd7acb6_fk_auth_user_id" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="user_id" unique="true" columns="permission_id"/>
+      <index name="auth_user_user_permissions_8373b171" unique="false" columns="permission_id"/>
+      <index name="auth_user_user_permissions_e8701ad4" unique="false" columns="user_id"/>
+    </table>
+    <table name="django_admin_log" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="action_time" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="object_id" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="object_repr" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="action_flag" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="change_message" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="content_type_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="django_admin__content_type_id_5151027a_fk_django_content_type_id" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="django_admin_log_user_id_1c5f563_fk_auth_user_id" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="django_admin_log_417f1b1c" unique="false" columns="content_type_id"/>
+      <index name="django_admin_log_e8701ad4" unique="false" columns="user_id"/>
+    </table>
+    <table name="django_content_type" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="app_label" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="model" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="auth_permissi_content_type_id_51277a81_fk_django_content_type_id" table="auth_permission" schema="" catalog="selenium" columns="content_type_id"/>
+      <exported-key name="django_admin__content_type_id_5151027a_fk_django_content_type_id" table="django_admin_log" schema="" catalog="selenium" columns="content_type_id"/>
+      <index name="django_content_type_app_label_3ec8c61c_uniq" unique="true" columns="app_label,model"/>
+    </table>
+    <table name="django_migrations" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="app" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="applied" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="django_session" schema="" catalog="selenium" type="TABLE">
+      <column name="session_key" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="session_data" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="expire_date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="session_key"/>
+      <index name="django_session_de54fa62" unique="false" columns="expire_date"/>
+    </table>
+    <table name="webapp_action" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="action" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="webapp_business_flow" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="category" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Project_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="webapp_business_flow_Project_id_4e6a50f_fk_webapp_project_id" columns="Project_id" ref-table="webapp_project" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="webapp_business__business_id_25264c6d_fk_webapp_business_flow_id" table="webapp_business_flow_stp" schema="" catalog="selenium" columns="business_id"/>
+      <index name="name" unique="true" columns="name"/>
+      <index name="webapp_business_flow_c6ca4204" unique="false" columns="Project_id"/>
+    </table>
+    <table name="webapp_business_flow_stp" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="desc" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="method" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="element" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="action" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="value" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="business_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="webapp_business__business_id_25264c6d_fk_webapp_business_flow_id" columns="business_id" ref-table="webapp_business_flow" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="webapp_business_flow_stp_2f4e4ac4" unique="false" columns="business_id"/>
+    </table>
+    <table name="webapp_method" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="by" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="webapp_perform_case" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="runmode" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="webapp_perform_case_user_id_68369b68_fk_auth_user_id" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="webapp_perform_det_perform_id_28948640_fk_webapp_perform_case_id" table="webapp_perform_detail" schema="" catalog="selenium" columns="perform_id"/>
+      <index name="name" unique="true" columns="name"/>
+      <index name="webapp_perform_case_e8701ad4" unique="false" columns="user_id"/>
+    </table>
+    <table name="webapp_perform_detail" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="case_nature" sqlType="VARCHAR" precision="500" scale="0" nullable="false" jdbcType="12"/>
+      <column name="category" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="perform_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="webapp_perform_det_perform_id_28948640_fk_webapp_perform_case_id" columns="perform_id" ref-table="webapp_perform_case" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="webapp_perform_detail_cf3685a2" unique="false" columns="perform_id"/>
+    </table>
+    <table name="webapp_project" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="create_time" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="pro_user" sqlType="VARCHAR" precision="500" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pro_status" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="webapp_business_flow_Project_id_4e6a50f_fk_webapp_project_id" table="webapp_business_flow" schema="" catalog="selenium" columns="Project_id"/>
+      <exported-key name="webapp_test_case_project_id_2eae7137_fk_webapp_project_id" table="webapp_test_case" schema="" catalog="selenium" columns="project_id"/>
+    </table>
+    <table name="webapp_test_case" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="case_nature" sqlType="VARCHAR" precision="500" scale="0" nullable="false" jdbcType="12"/>
+      <column name="category" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="project_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="webapp_test_case_project_id_2eae7137_fk_webapp_project_id" columns="project_id" ref-table="webapp_project" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="webapp_test_step_case_name_id_75108bfa_fk_webapp_test_case_id" table="webapp_test_step" schema="" catalog="selenium" columns="case_name_id"/>
+      <index name="name" unique="true" columns="name"/>
+      <index name="webapp_test_case_b098ad43" unique="false" columns="project_id"/>
+    </table>
+    <table name="webapp_test_step" schema="" catalog="selenium" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="desc" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="method" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="element" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="action" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="value" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="case_name_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="webapp_test_step_case_name_id_75108bfa_fk_webapp_test_case_id" columns="case_name_id" ref-table="webapp_test_case" ref-schema="" ref-catalog="selenium" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="webapp_test_step_c2adc79d" unique="false" columns="case_name_id"/>
+    </table>
+  </data-source>
+</component>

@@ -1,0 +1,5 @@
+2015-02-05 23:59:59,279 admin:INFO 项目已启动：
+项目已启动：
+2015-02-05 23:59:59,289 [Thread-2:5728] [django.db.backends:91] [DEBUG]- (0.001) SET SQL_AUTO_IS_NULL = 0; args=None
+2015-02-05 23:59:59,289 [Thread-2:5728] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow`.`id`, `webapp_business_flow`.`name`, `webapp_business_flow`.`date` FROM `webapp_business_flow` WHERE `webapp_business_flow`.`id` = 29 LIMIT 21; args=(29,)
+2015-02-05 23:59:59,315 [Thread-2:5728] [django.db.backends:91] [DEBUG]- (0.001) SELECT `webapp_business_flow_stp`.`id`, `webapp_business_flow_stp`.`desc`, `webapp_business_flow_stp`.`method`, `webapp_business_flow_stp`.`element`, `webapp_business_flow_stp`.`action`, `webapp_business_flow_stp`.`value`, `webapp_business_flow_stp`.`case_name_id` FROM `webapp_business_flow_stp` WHERE `webapp_business_flow_stp`.`case_name_id` = 29; args=(29,)
